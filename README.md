@@ -141,6 +141,10 @@ The composed tasks allow evaluation of multi-stage manipulation behavior under s
 
 ## Recommended 3D Printing Settings
 
+Full Guide: [HiveBoard - Module-Specific Instructions.pdf](https://github.com/user-attachments/files/29721347/HiveBoard.-.Module-Specific.Instructions.1.pdf)
+
+
+
 **Recommended Print Bed Size:** 300 × 300 mm.
 
 The HiveBoard system was designed around consumer-grade FDM printers with a minimum build volume of 300 × 300 mm, allowing the complete honeycomb base and all attachments to be printed without splitting large structural parts. This ensures better dimensional accuracy, improved press-fit consistency between modules, and simpler assembly across different printers and laboratories.
