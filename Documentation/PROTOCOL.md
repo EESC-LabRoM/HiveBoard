@@ -1,11 +1,11 @@
 # HiveBoard: Data Collection Protocol
 
-This document specifies the data each collaborating laboratory collects to validate HiveBoard, the modular dexterity board. The activity is operator-driven trials, robot-side performance characterization across attachments. Operators may control the manipulation system through a teleoperated arm or through a wearable interface that drives a gripper or hand directly.
+This document specifies the data each collaborating laboratory collects to validate HiveBoard, the modular dexterity board. The activity is operator-driven trials, robot-side performance characterization across attachments. Operators may control the manipulation system through a teleoperated arm or through a wearable interface or exoskeleton that drives a gripper or hand directly.
 
 The objective is to demonstrate that the board is functional, reproducible, and discriminative across attachments and platforms. The protocol does not rank platforms against each other and does not characterize control interfaces or operators.
 
 **Project resources:**
-- Repository (STL, CAD, simulation assets, this protocol, trial logging template): https://github.com/ricardovgodoy/HiveBoard
+- Repository (STL, CAD, simulation assets, this protocol, trial logging template): https://github.com/EESC-LabRoM/HiveBoard
 - Demonstration video (board walk-through and example trials): https://youtu.be/kaYB_Oc64nA
 
 ---
@@ -28,8 +28,8 @@ The canonical print profile lives in the project README. Summary, for convenienc
 - **Walls:** 4 perimeters.
 - **Top / bottom layers:** 5 / 5.
 - **Print speed:** 50 mm/s.
-- **Nozzle temperature:** 200--220 °C.
-- **Bed temperature:** 50--60 °C.
+- **Nozzle temperature:** 200 to 220 °C.
+- **Bed temperature:** 50 to 60 °C.
 - **Cooling:** 100%.
 - **Adhesion:** skirt or brim.
 - **Supports:** only where required.
@@ -116,6 +116,19 @@ A trial is a full success only if all stages complete within the timeout. Partia
 
 Each trial fills one row of `trials.csv` (template provided alongside this protocol). See `HOW_TO_FILL_TRIALS.md` for column-by-column instructions.
 
+For every trial whose outcome is `fail`, `timeout`, or `safety_stop`, record the primary failure cause in the `failure_cause` column using this closed vocabulary:
+
+| Cause | Meaning |
+|---|---|
+| `grasp_geometry` | The end-effector cannot engage the part in a stable grasp (shape, size, or access mismatch). |
+| `kinematic_limit` | The platform cannot produce the motion the task requires (e.g., clean rotation about an axis). |
+| `perception` | The operator could not see or judge alignment well enough to complete the task. |
+| `slip` | A grasp was acquired but lost during execution. |
+| `control_precision` | The available control resolution was too coarse for the clearance or force the task requires. |
+| `other` | None of the above; describe in `notes`. |
+
+Pick the single dominant cause per trial. Leave the column blank on `success` rows. The closed vocabulary is what makes failure modes comparable across laboratories, so use `other` plus a note only when nothing else fits.
+
 Alongside `trials.csv`, each lab provides:
 
 - `setup.jpg`, photograph of the physical setup.
@@ -136,5 +149,6 @@ Each collaborating lab returns a single archive containing:
 - [ ] Familiarization completed for every attachment before recording.
 - [ ] 5 recorded trials per attachment, all logged in `trials.csv`. The ball valve appears twice, once without the friction ring and once with it.
 - [ ] Timeouts enforced as specified.
+- [ ] `failure_cause` filled from the closed vocabulary for every `fail`, `timeout`, and `safety_stop` row.
 - [ ] `setup.jpg` and `platform.md` included.
 - [ ] No operator names or identifiers in any field.
