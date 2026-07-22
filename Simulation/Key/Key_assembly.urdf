@@ -1,160 +1,160 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <robot name="Key_assembly">
   <link name="Key_assembly">
     <visual>
-      <origin xyz="-5.9967265 4.9807825 -14.135935 " rpy="0. 0. -1.5707964"/>
+      <origin xyz="-0.005997 0.004981 -0.014136" rpy="0. 0. -1.5707964" />
       <geometry>
-        <mesh filename="meshes/Key_pivot_Corpo1_Mesh.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/Key_pivot_Corpo1_Mesh.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </visual>
     <visual>
-      <origin xyz="24.252682 0. 0. " rpy="0. 1.5707964 0. "/>
+      <origin xyz="0.024253 0.000000 0.000000" rpy="0. 1.5707964 0. " />
       <geometry>
-        <mesh filename="meshes/Cylinder.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/Cylinder.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </visual>
     <visual>
-      <origin xyz="-3.4884217 0. -1.648986 " rpy="0. 0. 0."/>
+      <origin xyz="-0.003488 0.000000 -0.001649" rpy="0. 0. 0." />
       <geometry>
-        <mesh filename="meshes/Key_pivot_Corpo1_simple_colliders_Cube.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/Key_pivot_Corpo1_simple_colliders_Cube.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </visual>
     <visual>
-      <origin xyz="-3.484769 -9.518754 -11.119983" rpy="0. 0. 0."/>
+      <origin xyz="-0.003485 -0.009519 -0.011120" rpy="0. 0. 0." />
       <geometry>
-        <mesh filename="meshes/Key_pivot_Corpo1_simple_colliders_Cube_01.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/Key_pivot_Corpo1_simple_colliders_Cube_01.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </visual>
     <visual>
-      <origin xyz="51.51134 0. -1.0811372" rpy="0. 0. 0."/>
+      <origin xyz="0.051511 0.000000 -0.001081" rpy="0. 0. 0." />
       <geometry>
-        <mesh filename="meshes/Key_pivot_Corpo1_simple_colliders_Cube_02.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/Key_pivot_Corpo1_simple_colliders_Cube_02.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </visual>
     <visual>
-      <origin xyz="70.48185 0. -1.0811372" rpy="0. 0. 0."/>
+      <origin xyz="0.070482 0.000000 -0.001081" rpy="0. 0. 0." />
       <geometry>
-        <mesh filename="meshes/Key_pivot_Corpo1_simple_colliders_Cube_03.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/Key_pivot_Corpo1_simple_colliders_Cube_03.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </visual>
     <visual>
-      <origin xyz="61.00725 0. 8.393462" rpy="0. -1.5707964 0. "/>
+      <origin xyz="0.061007 0.000000 0.008393" rpy="0. -1.5707964 0. " />
       <geometry>
-        <mesh filename="meshes/Key_pivot_Corpo1_simple_colliders_Cube_04.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/Key_pivot_Corpo1_simple_colliders_Cube_04.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </visual>
     <visual>
-      <origin xyz="61.00725 0. -10.635355" rpy="0. -1.5707964 0. "/>
+      <origin xyz="0.061007 0.000000 -0.010635" rpy="0. -1.5707964 0. " />
       <geometry>
-        <mesh filename="meshes/Cube_05.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/Cube_05.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </visual>
     <visual>
-      <origin xyz="5.037483 0. 0. " rpy="0. -1.5707964 0. "/>
+      <origin xyz="0.005037 0.000000 0.000000" rpy="0. -1.5707964 0. " />
       <geometry>
-        <mesh filename="meshes/Key_Base_pivot_Corpo1_Mesh.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/Key_Base_pivot_Corpo1_Mesh.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </visual>
     <visual>
-      <origin xyz="2.5608408 -25.33412 -0.1074115" rpy="0. 0. 0."/>
+      <origin xyz="0.002561 -0.025334 -0.000107" rpy="0. 0. 0." />
       <geometry>
-        <mesh filename="meshes/Key_Base_pivot_Corpo1_simple_colliders_Cube.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/Key_Base_pivot_Corpo1_simple_colliders_Cube.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </visual>
     <visual>
-      <origin xyz="2.5608408 25.257551 -0.1074115" rpy="0. 0. 0."/>
+      <origin xyz="0.002561 0.025258 -0.000107" rpy="0. 0. 0." />
       <geometry>
-        <mesh filename="meshes/Key_Base_pivot_Corpo1_simple_colliders_Cube_01.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/Key_Base_pivot_Corpo1_simple_colliders_Cube_01.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </visual>
     <visual>
-      <origin xyz="2.5608408 -0.0659618 20.826693 " rpy="0. 0. 0."/>
+      <origin xyz="0.002561 -0.000066 0.020827" rpy="0. 0. 0." />
       <geometry>
-        <mesh filename="meshes/Key_Base_pivot_Corpo1_simple_colliders_Cube_02.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/Key_Base_pivot_Corpo1_simple_colliders_Cube_02.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </visual>
     <visual>
-      <origin xyz="2.5608408 -0.0659618 -25.852373 " rpy="0. 0. 0."/>
+      <origin xyz="0.002561 -0.000066 -0.025852" rpy="0. 0. 0." />
       <geometry>
-        <mesh filename="meshes/Key_Base_pivot_Corpo1_simple_colliders_Cube_03.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/Key_Base_pivot_Corpo1_simple_colliders_Cube_03.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </visual>
     <visual>
-      <origin xyz="2.5608408 -3.1102486 -15.501797 " rpy="0. 0. 0."/>
+      <origin xyz="0.002561 -0.003110 -0.015502" rpy="0. 0. 0." />
       <geometry>
-        <mesh filename="meshes/Key_Base_pivot_Corpo1_simple_colliders_Cube_04.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/Key_Base_pivot_Corpo1_simple_colliders_Cube_04.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </visual>
     <collision>
-      <origin xyz="24.252682 0. 0. " rpy="0. 1.5707964 0. "/>
+      <origin xyz="0.024253 0.000000 0.000000" rpy="0. 1.5707964 0. " />
       <geometry>
-        <mesh filename="meshes/Cylinder.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/Cylinder.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-3.4884217 0. -1.648986 " rpy="0. 0. 0."/>
+      <origin xyz="-0.003488 0.000000 -0.001649" rpy="0. 0. 0." />
       <geometry>
-        <mesh filename="meshes/Key_pivot_Corpo1_simple_colliders_Cube.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/Key_pivot_Corpo1_simple_colliders_Cube.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </collision>
     <collision>
-      <origin xyz="-3.484769 -9.518754 -11.119983" rpy="0. 0. 0."/>
+      <origin xyz="-0.003485 -0.009519 -0.011120" rpy="0. 0. 0." />
       <geometry>
-        <mesh filename="meshes/Key_pivot_Corpo1_simple_colliders_Cube_01.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/Key_pivot_Corpo1_simple_colliders_Cube_01.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </collision>
     <collision>
-      <origin xyz="51.51134 0. -1.0811372" rpy="0. 0. 0."/>
+      <origin xyz="0.051511 0.000000 -0.001081" rpy="0. 0. 0." />
       <geometry>
-        <mesh filename="meshes/Key_pivot_Corpo1_simple_colliders_Cube_02.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/Key_pivot_Corpo1_simple_colliders_Cube_02.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </collision>
     <collision>
-      <origin xyz="70.48185 0. -1.0811372" rpy="0. 0. 0."/>
+      <origin xyz="0.070482 0.000000 -0.001081" rpy="0. 0. 0." />
       <geometry>
-        <mesh filename="meshes/Key_pivot_Corpo1_simple_colliders_Cube_03.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/Key_pivot_Corpo1_simple_colliders_Cube_03.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </collision>
     <collision>
-      <origin xyz="61.00725 0. 8.393462" rpy="0. -1.5707964 0. "/>
+      <origin xyz="0.061007 0.000000 0.008393" rpy="0. -1.5707964 0. " />
       <geometry>
-        <mesh filename="meshes/Key_pivot_Corpo1_simple_colliders_Cube_04.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/Key_pivot_Corpo1_simple_colliders_Cube_04.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </collision>
     <collision>
-      <origin xyz="61.00725 0. -10.635355" rpy="0. -1.5707964 0. "/>
+      <origin xyz="0.061007 0.000000 -0.010635" rpy="0. -1.5707964 0. " />
       <geometry>
-        <mesh filename="meshes/Cube_05.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/Cube_05.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </collision>
     <collision>
-      <origin xyz="2.5608408 -25.33412 -0.1074115" rpy="0. 0. 0."/>
+      <origin xyz="0.002561 -0.025334 -0.000107" rpy="0. 0. 0." />
       <geometry>
-        <mesh filename="meshes/Key_Base_pivot_Corpo1_simple_colliders_Cube.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/Key_Base_pivot_Corpo1_simple_colliders_Cube.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </collision>
     <collision>
-      <origin xyz="2.5608408 25.257551 -0.1074115" rpy="0. 0. 0."/>
+      <origin xyz="0.002561 0.025258 -0.000107" rpy="0. 0. 0." />
       <geometry>
-        <mesh filename="meshes/Key_Base_pivot_Corpo1_simple_colliders_Cube_01.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/Key_Base_pivot_Corpo1_simple_colliders_Cube_01.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </collision>
     <collision>
-      <origin xyz="2.5608408 -0.0659618 20.826693 " rpy="0. 0. 0."/>
+      <origin xyz="0.002561 -0.000066 0.020827" rpy="0. 0. 0." />
       <geometry>
-        <mesh filename="meshes/Key_Base_pivot_Corpo1_simple_colliders_Cube_02.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/Key_Base_pivot_Corpo1_simple_colliders_Cube_02.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </collision>
     <collision>
-      <origin xyz="2.5608408 -0.0659618 -25.852373 " rpy="0. 0. 0."/>
+      <origin xyz="0.002561 -0.000066 -0.025852" rpy="0. 0. 0." />
       <geometry>
-        <mesh filename="meshes/Key_Base_pivot_Corpo1_simple_colliders_Cube_03.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/Key_Base_pivot_Corpo1_simple_colliders_Cube_03.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </collision>
     <collision>
-      <origin xyz="2.5608408 -3.1102486 -15.501797 " rpy="0. 0. 0."/>
+      <origin xyz="0.002561 -0.003110 -0.015502" rpy="0. 0. 0." />
       <geometry>
-        <mesh filename="meshes/Key_Base_pivot_Corpo1_simple_colliders_Cube_04.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/Key_Base_pivot_Corpo1_simple_colliders_Cube_04.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </collision>
   </link>
