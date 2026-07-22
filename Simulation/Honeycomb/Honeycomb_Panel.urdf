@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="Honeycomb_Panel">
+  <link name="Honeycomb_Panel">
+    <visual>
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0. 1.5707963 0. " />
+      <geometry>
+        <mesh filename="meshes/tn__Hexagono_Suporte1_bX0_Corpo1_Mesh.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.000000 0.086603 0.000000" rpy="0. 1.5707963 0. " />
+      <geometry>
+        <mesh filename="meshes/tn__Hexagono_Suporte2_bX0_Corpo1_Mesh.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.000000 0.043301 0.075000" rpy="1.5707964 0.5235988 1.5707964" />
+      <geometry>
+        <mesh filename="meshes/tn__Hexagono_Suporte3_bX0_Corpo1_Mesh.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.000000 -0.043301 0.075000" rpy="1.5707964 -0.5235988 1.5707964" />
+      <geometry>
+        <mesh filename="meshes/tn__Hexagono_Suporte4_bX0_Corpo1_Mesh.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.000000 -0.086603 0.000000" rpy="-3.1415927 -1.5707963 0. " />
+      <geometry>
+        <mesh filename="meshes/tn__Hexagono_Suporte5_bX0_Corpo1_Mesh.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="-0.000000 -0.043301 -0.075000" rpy="-1.5707964 -0.5235988 -1.5707964" />
+      <geometry>
+        <mesh filename="meshes/tn__Hexagono_Suporte6_bX0_Corpo1_Mesh.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="-0.000000 0.043301 -0.075000" rpy="-1.5707964 0.5235988 -1.5707964" />
+      <geometry>
+        <mesh filename="meshes/tn__Hexagono_Suporte7_bX0_Corpo1_Mesh.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </visual>
+  <collision><origin xyz="0.000000 0.000000 0.000000" rpy="0. 1.5707963 0. " /><geometry><mesh filename="meshes/tn__Hexagono_Suporte1_bX0_Corpo1_Mesh.obj" scale="0.001000 0.001000 0.001000" /></geometry></collision><collision><origin xyz="0.000000 0.086603 0.000000" rpy="0. 1.5707963 0. " /><geometry><mesh filename="meshes/tn__Hexagono_Suporte2_bX0_Corpo1_Mesh.obj" scale="0.001000 0.001000 0.001000" /></geometry></collision><collision><origin xyz="0.000000 0.043301 0.075000" rpy="1.5707964 0.5235988 1.5707964" /><geometry><mesh filename="meshes/tn__Hexagono_Suporte3_bX0_Corpo1_Mesh.obj" scale="0.001000 0.001000 0.001000" /></geometry></collision><collision><origin xyz="0.000000 -0.043301 0.075000" rpy="1.5707964 -0.5235988 1.5707964" /><geometry><mesh filename="meshes/tn__Hexagono_Suporte4_bX0_Corpo1_Mesh.obj" scale="0.001000 0.001000 0.001000" /></geometry></collision><collision><origin xyz="0.000000 -0.086603 0.000000" rpy="-3.1415927 -1.5707963 0. " /><geometry><mesh filename="meshes/tn__Hexagono_Suporte5_bX0_Corpo1_Mesh.obj" scale="0.001000 0.001000 0.001000" /></geometry></collision><collision><origin xyz="-0.000000 -0.043301 -0.075000" rpy="-1.5707964 -0.5235988 -1.5707964" /><geometry><mesh filename="meshes/tn__Hexagono_Suporte6_bX0_Corpo1_Mesh.obj" scale="0.001000 0.001000 0.001000" /></geometry></collision><collision><origin xyz="-0.000000 0.043301 -0.075000" rpy="-1.5707964 0.5235988 -1.5707964" /><geometry><mesh filename="meshes/tn__Hexagono_Suporte7_bX0_Corpo1_Mesh.obj" scale="0.001000 0.001000 0.001000" /></geometry></collision></link>
+</robot>

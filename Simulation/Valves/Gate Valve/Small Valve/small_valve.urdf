@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="Small_Valve">
+  <joint name="PrismaticJoint" type="prismatic">
+    <origin xyz="0. -0. -0." rpy="0.0000002 0. 0. "/>
+    <parent link="pivot_registro"/>
+    <child link="eixo_trans"/>
+    <axis xyz="0. 0. 1."/>
+    <limit lower="-0.02" upper="0.015" effort="10000000." velocity="0."/>
+  </joint>
+  <joint name="RevoluteJoint" type="continuous">
+    <origin xyz="0. -0. 0." rpy="1.5707963 0. 0. "/>
+    <parent link="valvula_gaveta"/>
+    <child link="pivot_registro"/>
+    <axis xyz="0. 0. 1."/>
+  </joint>
+  <link name="eixo_trans">
+    <visual>
+      <origin xyz="-0. -0. -0.0723285" rpy="-0.0000001 0. 0. "/>
+      <geometry>
+        <mesh filename="./meshes/Mesh_21.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="-0. -0. -0.0723285" rpy="0.0000003 -0.0000001 -2.6011126"/>
+      <geometry>
+        <mesh filename="./meshes/Mesh_22.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0. -0. -0.0723285" rpy="-0.0000001 0. 0. "/>
+      <geometry>
+        <mesh filename="./meshes/Mesh_21.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="-0. -0. -0.0723285" rpy="0.0000003 -0.0000001 -2.6011126"/>
+      <geometry>
+        <mesh filename="./meshes/Mesh_22.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="pivot_registro">
+    <visual>
+      <origin xyz="0. -0. -0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="./meshes/Cylinder.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. -0. -0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="./meshes/Cylinder.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="valvula_gaveta">
+    <visual>
+      <origin xyz="0. 0.0740621 0. " rpy="1.5707964 0. 0. "/>
+      <geometry>
+        <mesh filename="./meshes/Mesh_1.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0.0740621 0. " rpy="1.5707964 0. 0. "/>
+      <geometry>
+        <mesh filename="./meshes/Mesh_1.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

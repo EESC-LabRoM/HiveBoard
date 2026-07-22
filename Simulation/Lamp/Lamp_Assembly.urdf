@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="Lamp_Assembly">
+  <joint name="PrismaticJoint" type="prismatic">
+    <origin xyz="-0. 0. -0." rpy="0. 0. 0."/>
+    <parent link="rotation_pivot"/>
+    <child link="lamp_pivot"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="0.024" effort="10000000." velocity="0."/>
+  </joint>
+  <joint name="RevoluteJoint" type="continuous">
+    <origin xyz="0. -0. 0." rpy="0. 0. 0."/>
+    <parent link="World"/>
+    <child link="rotation_pivot"/>
+    <axis xyz="1. 0. 0."/>
+  </joint>
+  <link name="World">
+    <visual>
+      <origin xyz="-0.0447325 -0. 0. " rpy="0. 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/base_pivot_Mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0447325 -0. 0. " rpy="0. 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/base_pivot_Mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="lamp_pivot">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="-1.5434489 -1.4170299 1.5429671"/>
+      <geometry>
+        <mesh filename="meshes/Corpo1_Mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="-1.5434489 -1.4170299 1.5429671"/>
+      <geometry>
+        <mesh filename="meshes/tn__Corpo11_j7m1J_Mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="-1.5434489 -1.4170299 1.5429671"/>
+      <geometry>
+        <mesh filename="meshes/tn__Corpo12_j7m1J_Mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="-1.5434489 -1.4170299 1.5429671"/>
+      <geometry>
+        <mesh filename="meshes/Corpo1_Mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="-1.5434489 -1.4170299 1.5429671"/>
+      <geometry>
+        <mesh filename="meshes/tn__Corpo11_j7m1J_Mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="-1.5434489 -1.4170299 1.5429671"/>
+      <geometry>
+        <mesh filename="meshes/tn__Corpo12_j7m1J_Mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="rotation_pivot">
+    <visual>
+      <origin xyz="-0.0390718 0. -0. " rpy="0. 1.5707964 0. "/>
+      <geometry>
+        <cylinder radius="0.005" length="0.01"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0390718 0. -0. " rpy="0. 1.5707964 0. "/>
+      <geometry>
+        <cylinder radius="0.005" length="0.01"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

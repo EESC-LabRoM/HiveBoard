@@ -1,0 +1,227 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="Drawer_Assembly">
+  <link name="Drawer_Assembly">
+    <visual>
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0. 1.5707964 0. " />
+      <geometry>
+        <mesh filename="meshes/tn__Base1_gA_Corpo1_Mesh.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.019000 0.000000 0.022396" rpy="0. 1.5707964 0. " />
+      <geometry>
+        <mesh filename="meshes/simple_colliders_Cube.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.019000 0.000000 -0.022839" rpy="0. 1.5707964 0. " />
+      <geometry>
+        <mesh filename="meshes/simple_colliders_Cube_01.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.000639 0.000000 0.000000" rpy="3.1415927 0. 3.1415927" />
+      <geometry>
+        <mesh filename="meshes/simple_colliders_Cube_02.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.013983 -0.036990 -0.011011" rpy="0. 0. 0." />
+      <geometry>
+        <mesh filename="meshes/left_Guide_Cube.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.024419 -0.036990 0.007061" rpy="0. 0. 0." />
+      <geometry>
+        <mesh filename="meshes/left_Guide_Cube_01.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.019104 -0.036990 -0.023485" rpy="0. 0. 0." />
+      <geometry>
+        <mesh filename="meshes/left_Guide_Cube_02.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.035530 -0.036990 -0.016197" rpy="0. 0. 0." />
+      <geometry>
+        <mesh filename="meshes/left_Guide_Cube_03.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.001747 -0.036990 -0.019452" rpy="0. 0. 0." />
+      <geometry>
+        <mesh filename="meshes/left_Guide_Cube_04.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.025516 -0.037173 -0.014515" rpy="1.5707964 0. 0. " />
+      <geometry>
+        <mesh filename="meshes/Cylinder.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.013983 0.036913 -0.011011" rpy="0. 0. 0." />
+      <geometry>
+        <mesh filename="meshes/right_Guide_Cube.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.024419 0.036913 0.007061" rpy="0. 0. 0." />
+      <geometry>
+        <mesh filename="meshes/right_Guide_Cube_01.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.019104 0.036913 -0.023485" rpy="0. 0. 0." />
+      <geometry>
+        <mesh filename="meshes/right_Guide_Cube_02.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.035530 0.036913 -0.016197" rpy="0. 0. 0." />
+      <geometry>
+        <mesh filename="meshes/right_Guide_Cube_03.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.001747 0.036913 -0.019452" rpy="0. 0. 0." />
+      <geometry>
+        <mesh filename="meshes/right_Guide_Cube_04.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.025516 0.037110 -0.014515" rpy="1.5707964 0. 0. " />
+      <geometry>
+        <mesh filename="meshes/right_Guide_Cylinder_01.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.002700 -0.035000 -0.022000" rpy="0. 0. 0." />
+      <geometry>
+        <mesh filename="meshes/tn__Gaveta1_aE_Corpo1_Mesh.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.005229 -0.036636 -0.019627" rpy="1.5707964 0. 0. " />
+      <geometry>
+        <mesh filename="meshes/tn__Gaveta1_aE_Corpo1_Cylinder_01.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.005229 0.036635 -0.019627" rpy="1.5707964 0. 0. " />
+      <geometry>
+        <mesh filename="meshes/Cylinder_02.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.019000 0.000000 0.022396" rpy="0. 1.5707964 0. " />
+      <geometry>
+        <mesh filename="meshes/simple_colliders_Cube.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.019000 0.000000 -0.022839" rpy="0. 1.5707964 0. " />
+      <geometry>
+        <mesh filename="meshes/simple_colliders_Cube_01.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.000639 0.000000 0.000000" rpy="3.1415927 0. 3.1415927" />
+      <geometry>
+        <mesh filename="meshes/simple_colliders_Cube_02.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.013983 -0.036990 -0.011011" rpy="0. 0. 0." />
+      <geometry>
+        <mesh filename="meshes/left_Guide_Cube.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.024419 -0.036990 0.007061" rpy="0. 0. 0." />
+      <geometry>
+        <mesh filename="meshes/left_Guide_Cube_01.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.019104 -0.036990 -0.023485" rpy="0. 0. 0." />
+      <geometry>
+        <mesh filename="meshes/left_Guide_Cube_02.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.035530 -0.036990 -0.016197" rpy="0. 0. 0." />
+      <geometry>
+        <mesh filename="meshes/left_Guide_Cube_03.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.001747 -0.036990 -0.019452" rpy="0. 0. 0." />
+      <geometry>
+        <mesh filename="meshes/left_Guide_Cube_04.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.025516 -0.037173 -0.014515" rpy="1.5707964 0. 0. " />
+      <geometry>
+        <mesh filename="meshes/Cylinder.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.013983 0.036913 -0.011011" rpy="0. 0. 0." />
+      <geometry>
+        <mesh filename="meshes/right_Guide_Cube.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.024419 0.036913 0.007061" rpy="0. 0. 0." />
+      <geometry>
+        <mesh filename="meshes/right_Guide_Cube_01.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.019104 0.036913 -0.023485" rpy="0. 0. 0." />
+      <geometry>
+        <mesh filename="meshes/right_Guide_Cube_02.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.035530 0.036913 -0.016197" rpy="0. 0. 0." />
+      <geometry>
+        <mesh filename="meshes/right_Guide_Cube_03.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.001747 0.036913 -0.019452" rpy="0. 0. 0." />
+      <geometry>
+        <mesh filename="meshes/right_Guide_Cube_04.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.025516 0.037110 -0.014515" rpy="1.5707964 0. 0. " />
+      <geometry>
+        <mesh filename="meshes/right_Guide_Cylinder_01.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.002700 -0.035000 -0.022000" rpy="0. 0. 0." />
+      <geometry>
+        <mesh filename="meshes/tn__Gaveta1_aE_Corpo1_Mesh.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.005229 -0.036636 -0.019627" rpy="1.5707964 0. 0. " />
+      <geometry>
+        <mesh filename="meshes/tn__Gaveta1_aE_Corpo1_Cylinder_01.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.005229 0.036635 -0.019627" rpy="1.5707964 0. 0. " />
+      <geometry>
+        <mesh filename="meshes/Cylinder_02.obj" scale="0.001000 0.001000 0.001000" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

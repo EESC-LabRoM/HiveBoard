@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="Circuit_Breaker_Assembly">
+  <joint name="FixedJoint" type="fixed">
+    <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+    <parent link="World"/>
+    <child link="body_pivot"/>
+  </joint>
+  <joint name="RevoluteJoint" type="revolute">
+    <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+    <parent link="body_pivot"/>
+    <child link="lever_pivot"/>
+    <axis xyz="0. 1. 0."/>
+    <limit lower="-0.5235988" upper="0.5235988" effort="10000000." velocity="0."/>
+  </joint>
+  <link name="World"/>
+  <link name="body_pivot">
+    <visual>
+      <origin xyz="-0.0350036 0. 0. " rpy="-1.5707964 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="file:///home/gonzales/Documents/repositories/AutoALMA/dependencies/HiveBoard/Simulation/Circuit Breaker/meshes/tn__corpo1_dC_Corpo1_Mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.0350036 0. 0. " rpy="-1.5707964 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="file:///home/gonzales/Documents/repositories/AutoALMA/dependencies/HiveBoard/Simulation/Circuit Breaker/meshes/tn__corpo1_dC_Corpo1_Mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="lever_pivot">
+    <visual>
+      <origin xyz="0.0081193 0.0200116 0.0099949" rpy="-1.5707964 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="file:///home/gonzales/Documents/repositories/AutoALMA/dependencies/HiveBoard/Simulation/Circuit Breaker/meshes/tn__Alavanca1_zH_Corpo1_Mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0.0081193 0.0200116 0.0099949" rpy="-1.5707964 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="file:///home/gonzales/Documents/repositories/AutoALMA/dependencies/HiveBoard/Simulation/Circuit Breaker/meshes/tn__Alavanca1_zH_Corpo1_Mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+</robot>
