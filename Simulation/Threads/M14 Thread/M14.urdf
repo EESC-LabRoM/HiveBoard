@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="M14">
+  <joint name="PrismaticJoint" type="prismatic">
+    <origin xyz="0. 0. 0." rpy="1.5707964 0. 0. "/>
+    <parent link="eixo_rot_porca"/>
+    <child link="eixo_trans_porca"/>
+    <axis xyz="0. 0. 1."/>
+    <limit lower="-0.005" upper="0.012" effort="10000000." velocity="0."/>
+  </joint>
+  <joint name="RevoluteJoint" type="continuous">
+    <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+    <parent link="World"/>
+    <child link="eixo_rot_porca"/>
+    <axis xyz="0. 0. 1."/>
+  </joint>
+  <link name="World">
+    <visual>
+      <origin xyz="0. 0.0228865 0. " rpy="1.5707964 0. 0. "/>
+      <geometry>
+        <mesh filename="meshes/Base_Corpo1.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0.0228865 0. " rpy="1.5707964 0. 0. "/>
+      <geometry>
+        <mesh filename="meshes/Base_Corpo1.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="eixo_rot_porca">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/Cylinder.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/Cylinder.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="eixo_trans_porca">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/Porca_Corpo1.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/Porca_Corpo1.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

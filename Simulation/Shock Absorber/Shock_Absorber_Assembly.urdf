@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="Shock_Absorber_Assembly">
+  <link name="Montagem_Principal">
+    <visual>
+      <origin xyz="0. 16.378181 -48.89263 " rpy="3.1415927 0. 0. "/>
+      <geometry>
+        <mesh filename="meshes/MeshInstance_Corpo1.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="-35. 16.488531 -63.89263 " rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/MeshInstance_1_Corpo1.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="-45. 16.488531 -42.93459 " rpy="0. -1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/Corpo3.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+  </link>
+</robot>

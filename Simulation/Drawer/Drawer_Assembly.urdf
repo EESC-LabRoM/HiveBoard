@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="Drawer_Assembly">
+  <link name="Drawer_Assembly">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/tn__Base1_gA_Corpo1_Mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="19. 0. 22.395975" rpy="0. 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/simple_colliders_Cube.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="19. 0. -22.839458" rpy="0. 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/simple_colliders_Cube_01.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0.6389502 0. 0. " rpy="3.1415927 0. 3.1415927"/>
+      <geometry>
+        <mesh filename="meshes/simple_colliders_Cube_02.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="13.983431 -36.990086 -11.010671" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/left_Guide_Cube.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="24.41913 -36.990086 7.0605674" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/left_Guide_Cube_01.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="19.103573 -36.990086 -23.485218" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/left_Guide_Cube_02.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="35.529907 -36.990086 -16.197495" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/left_Guide_Cube_03.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="1.7474453 -36.990086 -19.451769 " rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/left_Guide_Cube_04.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="25.516167 -37.173267 -14.515184" rpy="1.5707964 0. 0. "/>
+      <geometry>
+        <mesh filename="meshes/Cylinder.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="13.983431 36.912964 -11.010671" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/right_Guide_Cube.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="24.41913 36.912964 7.06057 " rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/right_Guide_Cube_01.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="19.103573 36.912964 -23.48522 " rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/right_Guide_Cube_02.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="35.529907 36.912964 -16.197495" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/right_Guide_Cube_03.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="1.7474453 36.912964 -19.451769 " rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/right_Guide_Cube_04.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="25.516167 37.11041 -14.515184" rpy="1.5707964 0. 0. "/>
+      <geometry>
+        <mesh filename="meshes/right_Guide_Cylinder_01.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="2.7 -35. -22. " rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/tn__Gaveta1_aE_Corpo1_Mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="5.2294993 -36.635563 -19.626785 " rpy="1.5707964 0. 0. "/>
+      <geometry>
+        <mesh filename="meshes/tn__Gaveta1_aE_Corpo1_Cylinder_01.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="5.2294993 36.635235 -19.626785 " rpy="1.5707964 0. 0. "/>
+      <geometry>
+        <mesh filename="meshes/Cylinder_02.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="19. 0. 22.395975" rpy="0. 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/simple_colliders_Cube.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="19. 0. -22.839458" rpy="0. 1.5707964 0. "/>
+      <geometry>
+        <mesh filename="meshes/simple_colliders_Cube_01.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="0.6389502 0. 0. " rpy="3.1415927 0. 3.1415927"/>
+      <geometry>
+        <mesh filename="meshes/simple_colliders_Cube_02.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="13.983431 -36.990086 -11.010671" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/left_Guide_Cube.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="24.41913 -36.990086 7.0605674" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/left_Guide_Cube_01.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="19.103573 -36.990086 -23.485218" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/left_Guide_Cube_02.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="35.529907 -36.990086 -16.197495" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/left_Guide_Cube_03.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="1.7474453 -36.990086 -19.451769 " rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/left_Guide_Cube_04.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="25.516167 -37.173267 -14.515184" rpy="1.5707964 0. 0. "/>
+      <geometry>
+        <mesh filename="meshes/Cylinder.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="13.983431 36.912964 -11.010671" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/right_Guide_Cube.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="24.41913 36.912964 7.06057 " rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/right_Guide_Cube_01.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="19.103573 36.912964 -23.48522 " rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/right_Guide_Cube_02.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="35.529907 36.912964 -16.197495" rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/right_Guide_Cube_03.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="1.7474453 36.912964 -19.451769 " rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/right_Guide_Cube_04.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="25.516167 37.11041 -14.515184" rpy="1.5707964 0. 0. "/>
+      <geometry>
+        <mesh filename="meshes/right_Guide_Cylinder_01.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="2.7 -35. -22. " rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/tn__Gaveta1_aE_Corpo1_Mesh.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="5.2294993 -36.635563 -19.626785 " rpy="1.5707964 0. 0. "/>
+      <geometry>
+        <mesh filename="meshes/tn__Gaveta1_aE_Corpo1_Cylinder_01.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+    <collision>
+      <origin xyz="5.2294993 36.635235 -19.626785 " rpy="1.5707964 0. 0. "/>
+      <geometry>
+        <mesh filename="meshes/Cylinder_02.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+</robot>
