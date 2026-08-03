@@ -1,23 +1,23 @@
 <?xml version='1.0' encoding='utf-8'?>
 <robot name="Shock_Absorber_Assembly">
   <link name="Montagem_Principal">
-    <visual>
+    <inertial><origin xyz="0.000000 0.000000 0.000007" rpy="0 0 0" /><mass value="0.0050" /><inertia ixx="1e-06" ixy="0" ixz="0" iyy="1e-06" iyz="0" izz="1e-06" /></inertial><visual>
       <origin xyz="0.000000 0.016378 -0.048893" rpy="3.1415927 0. 0. " />
       <geometry>
-        <mesh filename="meshes/MeshInstance_Corpo1.obj" scale="0.001 0.001 0.001" />
+        <mesh filename="meshes/MeshInstance_Corpo1.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </visual>
     <visual>
       <origin xyz="-0.035000 0.016489 -0.063893" rpy="0. 0. 0." />
       <geometry>
-        <mesh filename="meshes/MeshInstance_1_Corpo1.obj" scale="0.001 0.001 0.001" />
+        <mesh filename="meshes/MeshInstance_1_Corpo1.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </visual>
     <visual>
       <origin xyz="-0.045000 0.016489 -0.042935" rpy="0. -1.5707964 0. " />
       <geometry>
-        <mesh filename="meshes/Corpo3.obj" scale="0.001 0.001 0.001" />
+        <mesh filename="meshes/Corpo3.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </visual>
-  <collision><origin xyz="0.000000 0.016378 -0.048893" rpy="3.1415927 0. 0. " /><geometry><mesh filename="meshes/MeshInstance_Corpo1.obj" scale="0.001 0.001 0.001" /></geometry></collision><collision><origin xyz="-0.035000 0.016489 -0.063893" rpy="0. 0. 0." /><geometry><mesh filename="meshes/MeshInstance_1_Corpo1.obj" scale="0.001 0.001 0.001" /></geometry></collision><collision><origin xyz="-0.045000 0.016489 -0.042935" rpy="0. -1.5707964 0. " /><geometry><mesh filename="meshes/Corpo3.obj" scale="0.001 0.001 0.001" /></geometry></collision></link>
+  <collision><origin xyz="0.000000 0.016378 -0.048893" rpy="3.1415927 0. 0. " /><geometry><mesh filename="meshes/MeshInstance_Corpo1.obj" scale="0.001000 0.001000 0.001000" /></geometry></collision><collision><origin xyz="-0.035000 0.016489 -0.063893" rpy="0. 0. 0." /><geometry><mesh filename="meshes/MeshInstance_1_Corpo1.obj" scale="0.001000 0.001000 0.001000" /></geometry></collision><collision><origin xyz="-0.045000 0.016489 -0.042935" rpy="0. -1.5707964 0. " /><geometry><mesh filename="meshes/Corpo3.obj" scale="0.001000 0.001000 0.001000" /></geometry></collision></link>
 </robot>

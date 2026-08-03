@@ -1,58 +1,58 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <robot name="Button_Assembly">
   <joint name="PrismaticJoint" type="prismatic">
-    <origin xyz="0. -0. 0." rpy="0. 0. 0."/>
-    <parent link="World"/>
-    <child link="button_pivot"/>
-    <axis xyz="1. 0. 0."/>
-    <limit lower="-0.01" upper="0." effort="10000000." velocity="0."/>
+    <origin xyz="0. -0. 0." rpy="0. 0. 0." />
+    <parent link="World" />
+    <child link="button_pivot" />
+    <axis xyz="1. 0. 0." />
+    <limit lower="-0.01" upper="0." effort="100.0" velocity="1.0" />
   </joint>
   <joint name="RevoluteJoint" type="revolute">
-    <origin xyz="-0.0034325 0.0304632 0. " rpy="0. 0. 0."/>
-    <parent link="World"/>
-    <child link="lid_pivot"/>
-    <axis xyz="0. 0. 1."/>
-    <limit lower="-1.5707963" upper="0.6981317" effort="0." velocity="0."/>
+    <origin xyz="-0.0034325 0.0304632 0. " rpy="0. 0. 0." />
+    <parent link="World" />
+    <child link="lid_pivot" />
+    <axis xyz="0. 0. 1." />
+    <limit lower="-1.5707963" upper="0.6981317" effort="100.0" velocity="10.0" />
   </joint>
   <link name="World">
-    <visual>
-      <origin xyz="-0.0209518 -0. 0. " rpy="0. 1.5707964 0. "/>
+    <inertial><origin xyz="0.000000 0.000000 0.010500" rpy="0 0 0" /><mass value="0.1412" /><inertia ixx="7.36627e-05" ixy="0" ixz="0" iyy="9.64878e-05" iyz="0" izz="0.000159776" /></inertial><visual>
+      <origin xyz="-0.0209518 -0. 0. " rpy="0. 1.5707964 0. " />
       <geometry>
-        <mesh filename="file:///home/gonzales/Documents/repositories/AutoALMA/dependencies/HiveBoard/Simulation/Button/meshes/tn__corpo1_dC_Corpo1_Mesh.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/tn__corpo1_dC_Corpo1_Mesh.obj" scale="1. 1. 1." />
       </geometry>
     </visual>
     <collision>
-      <origin xyz="-0.0209518 -0. 0. " rpy="0. 1.5707964 0. "/>
+      <origin xyz="-0.0209518 -0. 0. " rpy="0. 1.5707964 0. " />
       <geometry>
-        <mesh filename="file:///home/gonzales/Documents/repositories/AutoALMA/dependencies/HiveBoard/Simulation/Button/meshes/tn__corpo1_dC_Corpo1_Mesh.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/tn__corpo1_dC_Corpo1_Mesh.obj" scale="1. 1. 1." />
       </geometry>
     </collision>
   </link>
   <link name="button_pivot">
-    <visual>
-      <origin xyz="-0. 0. -0." rpy="0. 1.5707963 0. "/>
+    <inertial><origin xyz="0.000000 0.000000 0.005700" rpy="0 0 0" /><mass value="0.0377" /><inertia ixx="7.44185e-06" ixy="0" ixz="0" iyy="7.44185e-06" iyz="0" izz="1.27119e-05" /></inertial><visual>
+      <origin xyz="-0. 0. -0." rpy="0. 1.5707963 0. " />
       <geometry>
-        <mesh filename="file:///home/gonzales/Documents/repositories/AutoALMA/dependencies/HiveBoard/Simulation/Button/meshes/tn__botao1_dC_Corpo1_Mesh.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/tn__botao1_dC_Corpo1_Mesh.obj" scale="1. 1. 1." />
       </geometry>
     </visual>
     <collision>
-      <origin xyz="-0. 0. -0." rpy="0. 1.5707963 0. "/>
+      <origin xyz="-0. 0. -0." rpy="0. 1.5707963 0. " />
       <geometry>
-        <mesh filename="file:///home/gonzales/Documents/repositories/AutoALMA/dependencies/HiveBoard/Simulation/Button/meshes/tn__botao1_dC_Corpo1_Mesh.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/tn__botao1_dC_Corpo1_Mesh.obj" scale="1. 1. 1." />
       </geometry>
     </collision>
   </link>
   <link name="lid_pivot">
-    <visual>
-      <origin xyz="0.0055156 0.0175212 -0.0249821" rpy="-1.5707964 -1.5707963 0. "/>
+    <inertial><origin xyz="0.025000 0.024000 -0.008500" rpy="0 0 0" /><mass value="0.0824" /><inertia ixx="3.17707e-05" ixy="0" ixz="0" iyy="2.51761e-05" iyz="0" izz="4.9679e-05" /></inertial><visual>
+      <origin xyz="0.0055156 0.0175212 -0.0249821" rpy="-1.5707964 -1.5707963 0. " />
       <geometry>
-        <mesh filename="file:///home/gonzales/Documents/repositories/AutoALMA/dependencies/HiveBoard/Simulation/Button/meshes/tn__Tampa1_dC_Corpo1_Mesh.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/tn__Tampa1_dC_Corpo1_Mesh.obj" scale="1. 1. 1." />
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0.0055156 0.0175212 -0.0249821" rpy="-1.5707964 -1.5707963 0. "/>
+      <origin xyz="0.0055156 0.0175212 -0.0249821" rpy="-1.5707964 -1.5707963 0. " />
       <geometry>
-        <mesh filename="file:///home/gonzales/Documents/repositories/AutoALMA/dependencies/HiveBoard/Simulation/Button/meshes/tn__Tampa1_dC_Corpo1_Mesh.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/tn__Tampa1_dC_Corpo1_Mesh.obj" scale="1. 1. 1." />
       </geometry>
     </collision>
   </link>
