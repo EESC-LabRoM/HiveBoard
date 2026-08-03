@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <robot name="Key_assembly">
   <link name="Key_assembly">
-    <visual>
+    <inertial><origin xyz="0.000010 0.000039 0.000013" rpy="0 0 0" /><mass value="0.0050" /><inertia ixx="1e-06" ixy="0" ixz="0" iyy="1e-06" iyz="0" izz="1e-06" /></inertial><visual>
       <origin xyz="-0.005997 0.004981 -0.014136" rpy="0. 0. -1.5707964" />
       <geometry>
         <mesh filename="meshes/Key_pivot_Corpo1_Mesh.obj" scale="0.001000 0.001000 0.001000" />

@@ -1,43 +1,43 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <robot name="Circuit_Breaker_Assembly">
   <joint name="FixedJoint" type="fixed">
-    <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
-    <parent link="World"/>
-    <child link="body_pivot"/>
+    <origin xyz="0. 0. 0." rpy="0. 0. 0." />
+    <parent link="World" />
+    <child link="body_pivot" />
   </joint>
   <joint name="RevoluteJoint" type="revolute">
-    <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
-    <parent link="body_pivot"/>
-    <child link="lever_pivot"/>
-    <axis xyz="0. 1. 0."/>
-    <limit lower="-0.5235988" upper="0.5235988" effort="10000000." velocity="0."/>
+    <origin xyz="0. 0. 0." rpy="0. 0. 0." />
+    <parent link="body_pivot" />
+    <child link="lever_pivot" />
+    <axis xyz="0. 1. 0." />
+    <limit lower="-0.5235988" upper="0.5235988" effort="100.0" velocity="10.0" />
   </joint>
-  <link name="World"/>
+  <link name="World"><inertial><origin xyz="0.000000 0.000000 0.000000" rpy="0 0 0" /><mass value="0.0500" /><inertia ixx="1e-05" ixy="0" ixz="0" iyy="1e-05" iyz="0" izz="1e-05" /></inertial></link>
   <link name="body_pivot">
-    <visual>
-      <origin xyz="-0.0350036 0. 0. " rpy="-1.5707964 0. -1.5707964"/>
+    <inertial><origin xyz="0.000000 0.000000 0.019608" rpy="0 0 0" /><mass value="0.2636" /><inertia ixx="0.000161653" ixy="0" ixz="0" iyy="0.000204277" iyz="0" izz="0.000298367" /></inertial><visual>
+      <origin xyz="-0.0350036 0. 0. " rpy="-1.5707964 0. -1.5707964" />
       <geometry>
-        <mesh filename="file:///home/gonzales/Documents/repositories/AutoALMA/dependencies/HiveBoard/Simulation/Circuit Breaker/meshes/tn__corpo1_dC_Corpo1_Mesh.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/tn__corpo1_dC_Corpo1_Mesh.obj" scale="1. 1. 1." />
       </geometry>
     </visual>
     <collision>
-      <origin xyz="-0.0350036 0. 0. " rpy="-1.5707964 0. -1.5707964"/>
+      <origin xyz="-0.0350036 0. 0. " rpy="-1.5707964 0. -1.5707964" />
       <geometry>
-        <mesh filename="file:///home/gonzales/Documents/repositories/AutoALMA/dependencies/HiveBoard/Simulation/Circuit Breaker/meshes/tn__corpo1_dC_Corpo1_Mesh.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/tn__corpo1_dC_Corpo1_Mesh.obj" scale="1. 1. 1." />
       </geometry>
     </collision>
   </link>
   <link name="lever_pivot">
-    <visual>
-      <origin xyz="0.0081193 0.0200116 0.0099949" rpy="-1.5707964 0. -1.5707964"/>
+    <inertial><origin xyz="0.020000 0.010000 -0.001500" rpy="0 0 0" /><mass value="0.0264" /><inertia ixx="3.2758e-06" ixy="0" ixz="0" iyy="5.9158e-06" iyz="0" izz="4.4e-06" /></inertial><visual>
+      <origin xyz="0.0081193 0.0200116 0.0099949" rpy="-1.5707964 0. -1.5707964" />
       <geometry>
-        <mesh filename="file:///home/gonzales/Documents/repositories/AutoALMA/dependencies/HiveBoard/Simulation/Circuit Breaker/meshes/tn__Alavanca1_zH_Corpo1_Mesh.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/tn__Alavanca1_zH_Corpo1_Mesh.obj" scale="1. 1. 1." />
       </geometry>
     </visual>
     <collision>
-      <origin xyz="0.0081193 0.0200116 0.0099949" rpy="-1.5707964 0. -1.5707964"/>
+      <origin xyz="0.0081193 0.0200116 0.0099949" rpy="-1.5707964 0. -1.5707964" />
       <geometry>
-        <mesh filename="file:///home/gonzales/Documents/repositories/AutoALMA/dependencies/HiveBoard/Simulation/Circuit Breaker/meshes/tn__Alavanca1_zH_Corpo1_Mesh.obj" scale="1. 1. 1."/>
+        <mesh filename="meshes/tn__Alavanca1_zH_Corpo1_Mesh.obj" scale="1. 1. 1." />
       </geometry>
     </collision>
   </link>
