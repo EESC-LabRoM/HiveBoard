@@ -124,6 +124,7 @@ For every trial whose outcome is `fail`, `timeout`, or `safety_stop`, record the
 | `kinematic_limit` | The platform cannot produce the motion the task requires (e.g., clean rotation about an axis). |
 | `perception` | The operator could not see or judge alignment well enough to complete the task. |
 | `slip` | A grasp was acquired but lost during execution. |
+| `force_limit` | The grasp or actuation force the platform can produce is insufficient for the task, even though the grasp and the motion are otherwise correct (e.g., holding a screw against thread friction). |
 | `control_precision` | The available control resolution was too coarse for the clearance or force the task requires. |
 | `other` | None of the above; describe in `notes`. |
 
