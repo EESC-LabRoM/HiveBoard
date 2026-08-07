@@ -14,7 +14,7 @@ For a video walk-through of the protocol see: https://youtu.be/kaYB_Oc64nA
 | `platform_id` | End-effector + control interface combination, lowercase, underscores. Examples: `franka_2f85` (Franka arm with Robotiq 2F-85, teleop), `ur5_robotiq_3f` (UR5 with Robotiq 3F), `anymal_arm_dynaarm`, `psyonic_ability_wearable` (Psyonic Ability Hand driven by a wearable interface). Use the same value on every row. |
 | `date` | Trial date in `YYYY-MM-DD` format. |
 | `outcome` | One of: `success`, `fail`, `timeout`, `safety_stop`. |
-| `failure_cause` | **Required whenever outcome is not `success`.** One of: `grasp_geometry`, `kinematic_limit`, `perception`, `slip`, `control_precision`, `other`. Pick the single dominant cause; see the quick reference below. Leave blank on `success` rows. |
+| `failure_cause` | **Required whenever outcome is not `success`.** One of: `grasp_geometry`, `kinematic_limit`, `perception`, `slip`, `force_limit`, `control_precision`, `other`. Pick the single dominant cause; see the quick reference below. Leave blank on `success` rows. |
 | `completion_time_s` | Seconds from trial start to success. **Leave blank** if outcome is not `success`. |
 | `n_attempts` | Number of distinct grasping or actuation attempts within the trial. Minimum is 1. |
 | `n_regrasps` | Number of times the gripper opened and re-closed on the attachment within the trial. |
@@ -29,6 +29,7 @@ For a video walk-through of the protocol see: https://youtu.be/kaYB_Oc64nA
 | `kinematic_limit` | The platform cannot produce the motion the task requires (e.g., clean rotation about an axis). |
 | `perception` | The operator could not see or judge alignment well enough to complete the task. |
 | `slip` | A grasp was acquired but lost during execution. |
+| `force_limit` | The platform cannot produce enough grasp or actuation force for the task, even though grasp and motion are otherwise correct. |
 | `control_precision` | The control resolution was too coarse for the clearance or force the task requires. |
 | `other` | Nothing above fits; explain in `notes`. |
 
