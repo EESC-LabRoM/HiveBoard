@@ -1,4 +1,4 @@
-# HiveBoard – a Modular Dexterity Benchmark for Industrial Robotics
+# HiveBoard: a Modular Dexterity Benchmark for Industrial Robotics
 
 <p align="center">
     <picture>
@@ -159,10 +159,10 @@ The HiveBoard system was designed around consumer-grade FDM printers with a mini
 | Wall Count | 4 |
 | Top Layers | 5 |
 | Bottom Layers | 5 |
-| Infill | 20–40% |
+| Infill | 20 to 40% |
 | Print Speed | 50 mm/s |
-| Nozzle Temperature | 200–220°C |
-| Bed Temperature | 50–60°C |
+| Nozzle Temperature | 200 to 220°C |
+| Bed Temperature | 50 to 60°C |
 | Cooling Fan | 100% |
 | Supports | Only where required |
 | Adhesion Type | Skirt or Brim |
@@ -196,7 +196,7 @@ The HiveBoard system was designed around consumer-grade FDM printers with a mini
 
 ## Simulation Compatibility
 
-![Simulation Assets](images/simulation_assets.png)
+<!-- TODO: add a simulation screenshot here, e.g. Images/simulation_assets.png -->
 
 The HiveBoard project also includes simulation-ready CAD assets suitable for:
 
