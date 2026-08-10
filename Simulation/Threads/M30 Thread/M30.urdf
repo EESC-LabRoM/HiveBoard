@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="M30">
+  <joint name="PrismaticJoint" type="prismatic">
+    <origin xyz="0. 0. 0." rpy="0. 0. 0." />
+    <parent link="World" />
+    <child link="Base" />
+    <axis xyz="0. 0. 1." />
+    <limit lower="-0.05" upper="0." effort="100.0" velocity="1.0" />
+  </joint>
+  <joint name="RevoluteJoint" type="continuous">
+    <origin xyz="0. 0. 0.015649" rpy="0. 0. 0." />
+    <parent link="World" />
+    <child link="Nut" />
+    <axis xyz="0. 0. 1." />
+  </joint>
+  <link name="Base">
+    <inertial><origin xyz="0.000000 0.000000 0.032500" rpy="0 0 0" /><mass value="0.4369" /><inertia ixx="0.000365777" ixy="0" ixz="0" iyy="0.000436426" iyz="0" izz="0.000494543" /></inertial><visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0." />
+      <geometry>
+        <mesh filename="meshes/Base_Corpo1.obj" scale="1. 1. 1." />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0." />
+      <geometry>
+        <mesh filename="meshes/Base_Corpo1.obj" scale="1. 1. 1." />
+      </geometry>
+    </collision>
+  </link>
+  <link name="Nut">
+    <inertial><origin xyz="0.000000 0.000000 0.012000" rpy="0 0 0" /><mass value="0.0586" /><inertia ixx="1.66017e-05" ixy="0" ixz="0" iyy="1.3155e-05" iyz="0" izz="2.41272e-05" /></inertial><visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. -0.4439008" />
+      <geometry>
+        <mesh filename="meshes/Nut_Corpo1.obj" scale="1. 1. 1." />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. -0.4439008" />
+      <geometry>
+        <mesh filename="meshes/Nut_Corpo1.obj" scale="1. 1. 1." />
+      </geometry>
+    </collision>
+  </link>
+  <link name="World"><inertial><origin xyz="0.000000 0.000000 0.000000" rpy="0 0 0" /><mass value="0.0500" /><inertia ixx="1e-05" ixy="0" ixz="0" iyy="1e-05" iyz="0" izz="1e-05" /></inertial></link>
+</robot>
