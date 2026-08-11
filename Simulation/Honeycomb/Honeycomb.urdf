@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <robot name="Honeycomb">
   <link name="Honeycomb">
-    <inertial><origin xyz="0.000000 0.000000 10.000000" rpy="0 0 0" /><mass value="10.0000" /><inertia ixx="6583.33" ixy="0" ixz="0" iyy="8666.67" iyz="0" izz="14583.3" /></inertial><visual>
-      <origin xyz="0. 0. 0." rpy="0. 1.5707964 0. " />
+    <inertial><origin xyz="0.000000 0.000000 0.010000" rpy="0 0 0" /><mass value="0.1732" /><inertia ixx="0.000114027" ixy="0" ixz="0" iyy="0.000150111" iyz="0" izz="0.000252591" /></inertial><visual>
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0. 1.5707964 0. " />
       <geometry>
-        <mesh filename="meshes/Mesh.obj" scale="1. 1. 1." />
+        <mesh filename="meshes/Mesh.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </visual>
-  <collision><origin xyz="0. 0. 0." rpy="0. 1.5707964 0. " /><geometry><mesh filename="meshes/Mesh.obj" scale="1. 1. 1." /></geometry></collision></link>
+  <collision><origin xyz="0.000000 0.000000 0.000000" rpy="0. 1.5707964 0. " /><geometry><mesh filename="meshes/Mesh.obj" scale="0.001000 0.001000 0.001000" /></geometry></collision></link>
 </robot>

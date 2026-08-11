@@ -1,29 +1,29 @@
 <?xml version='1.0' encoding='utf-8'?>
 <robot name="Ball_Valve_Friction_Ring_Set">
   <link name="Ball_Valve_Friction_Ring_Set">
-    <inertial><origin xyz="-1.456070 0.000000 1.000000" rpy="0 0 0" /><mass value="10.0000" /><inertia ixx="336.491" ixy="0" ixz="0" iyy="246.662" iyz="0" izz="576.486" /></inertial><visual>
-      <origin xyz="0. 0. 0." rpy="0. 0. 0." />
+    <inertial><origin xyz="-0.001456 0.000000 0.001000" rpy="0 0 0" /><mass value="0.0050" /><inertia ixx="1e-06" ixy="0" ixz="0" iyy="1e-06" iyz="0" izz="1e-06" /></inertial><visual>
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0. 0. 0." />
       <geometry>
-        <mesh filename="meshes/Corpo1_Mesh.obj" scale="1. 1. 1." />
+        <mesh filename="meshes/Corpo1_Mesh.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </visual>
     <visual>
-      <origin xyz="0. 0. 0." rpy="0. 0. 0." />
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0. 0. 0." />
       <geometry>
-        <mesh filename="meshes/Corpo2_Mesh.obj" scale="1. 1. 1." />
+        <mesh filename="meshes/Corpo2_Mesh.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </visual>
     <visual>
-      <origin xyz="0. 0. 0." rpy="0. 0. 0." />
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0. 0. 0." />
       <geometry>
-        <mesh filename="meshes/Corpo3_Mesh.obj" scale="1. 1. 1." />
+        <mesh filename="meshes/Corpo3_Mesh.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </visual>
     <visual>
-      <origin xyz="0. 0. 0." rpy="0. 0. 0." />
+      <origin xyz="0.000000 0.000000 0.000000" rpy="0. 0. 0." />
       <geometry>
-        <mesh filename="meshes/Corpo4_Mesh.obj" scale="1. 1. 1." />
+        <mesh filename="meshes/Corpo4_Mesh.obj" scale="0.001000 0.001000 0.001000" />
       </geometry>
     </visual>
-  <collision><origin xyz="0. 0. 0." rpy="0. 0. 0." /><geometry><mesh filename="meshes/Corpo1_Mesh.obj" scale="1. 1. 1." /></geometry></collision><collision><origin xyz="0. 0. 0." rpy="0. 0. 0." /><geometry><mesh filename="meshes/Corpo2_Mesh.obj" scale="1. 1. 1." /></geometry></collision><collision><origin xyz="0. 0. 0." rpy="0. 0. 0." /><geometry><mesh filename="meshes/Corpo3_Mesh.obj" scale="1. 1. 1." /></geometry></collision><collision><origin xyz="0. 0. 0." rpy="0. 0. 0." /><geometry><mesh filename="meshes/Corpo4_Mesh.obj" scale="1. 1. 1." /></geometry></collision></link>
+  <collision><origin xyz="0.000000 0.000000 0.000000" rpy="0. 0. 0." /><geometry><mesh filename="meshes/Corpo1_Mesh.obj" scale="0.001000 0.001000 0.001000" /></geometry></collision><collision><origin xyz="0.000000 0.000000 0.000000" rpy="0. 0. 0." /><geometry><mesh filename="meshes/Corpo2_Mesh.obj" scale="0.001000 0.001000 0.001000" /></geometry></collision><collision><origin xyz="0.000000 0.000000 0.000000" rpy="0. 0. 0." /><geometry><mesh filename="meshes/Corpo3_Mesh.obj" scale="0.001000 0.001000 0.001000" /></geometry></collision><collision><origin xyz="0.000000 0.000000 0.000000" rpy="0. 0. 0." /><geometry><mesh filename="meshes/Corpo4_Mesh.obj" scale="0.001000 0.001000 0.001000" /></geometry></collision></link>
 </robot>
