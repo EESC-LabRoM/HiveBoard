@@ -137,6 +137,9 @@ The composed tasks allow evaluation of multi-stage manipulation behavior under s
 | Assembly Tasks | Sliding Drawer |
 | Assembly Tasks | Shock Absorber |
 
+We have included test files for printing the threads to ensure a successful print without wasting filament.
+
+
 ---
 
 ## Recommended 3D Printing Settings
