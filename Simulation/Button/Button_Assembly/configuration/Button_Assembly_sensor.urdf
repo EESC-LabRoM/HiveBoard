@@ -1,4 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<robot name="Button_Assembly_sensor">
-  <link name="Button_Assembly"><inertial><origin xyz="0.000000 0.000000 0.000000" rpy="0 0 0" /><mass value="0.0500" /><inertia ixx="1e-05" ixy="0" ixz="0" iyy="1e-05" iyz="0" izz="1e-05" /></inertial></link>
-</robot>
