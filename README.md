@@ -57,7 +57,7 @@ This modular architecture enables:
 ### 1. Torque-Based Tasks
 
 <p align="center">
-    <img src="Images/Precision_1.png" width="50%">
+    <img src="Images/Torque_1.png" width="50%">
 </p>
 
 These tasks evaluate force control and rotational manipulation capabilities.
