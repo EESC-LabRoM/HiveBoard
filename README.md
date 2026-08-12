@@ -137,10 +137,7 @@ The composed tasks allow evaluation of multi-stage manipulation behavior under s
 | Assembly Tasks | Sliding Drawer |
 | Assembly Tasks | Shock Absorber |
 
-> **Note on the peg insertion plate.** The simulation assets for this attachment are in
-> `Simulation/Peg Insertion/`, but a printable STL is not yet exported. Until it is, the task can be
-> reproduced with `STL/Shock Absorber/Shock_Absorber_Base.stl` and
-> `STL/Shock Absorber/Shock_Absorber_Pin.stl`, which use the same threaded pin geometry.
+We have included test files for printing the threads to ensure a successful print without wasting filament.
 
 ---
 
