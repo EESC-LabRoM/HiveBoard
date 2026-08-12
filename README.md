@@ -1,4 +1,4 @@
-# HiveBoard: a Modular Dexterity Benchmark for Industrial Robotics
+# HiveBoard: an Open, Modular, 3D-Printed Benchmark of Industrial Mechanisms
 
 <p align="center">
     <picture>
@@ -12,7 +12,7 @@ Demonstration video: https://youtu.be/kaYB_Oc64nA
 
 ## Overview
 
-HiveBoard is an open, modular, and fully 3D-printable dexterity benchmark designed for evaluating industrial robotic manipulation systems. The project focuses on reproducibility, accessibility, and compatibility with both real-world robotic systems and simulation environments.
+HiveBoard is an open, modular, fully 3D-printable benchmark for manipulation of functional mechanisms. Manipulation is usually benchmarked on free objects, through grasping and pick-and-place of loose parts. The mechanisms that make manipulation useful are not free objects: a valve resists rotation, a screw advances only along its thread, a lock opens only after a key is inserted and turned. HiveBoard poses those tasks in a form any laboratory can print, and the attachments assume no particular gripper width, approach axis, or mounting frame, so a robot gripper, a dexterous hand, and a worn prosthetic hand can be scored on the same artifact under the same protocol.
 
 The platform is designed around three principles:
 
@@ -69,7 +69,7 @@ Included components:
 | Ball Valve | Quarter-turn valve with a lever handle |
 | Friction Rings | Snap-on rings (set of four) that increase rotational friction, and therefore torque resistance, on the ball valve |
 | Gate Valve (Small) | Compact gate valve with a smaller handwheel |
-| Gate Valve (Large) | Larger gate valve with a higher-leverage handwheel |
+| Gate Valve (Large) | Larger gate valve with a bigger handwheel and more mechanical advantage |
 | Circuit Breaker | Toggle-style industrial breaker |
 
 The friction-ring system gives multiple torque levels on the ball valve without printing additional valves. Each ring sets a different rotational friction.
@@ -91,9 +91,9 @@ Included components:
 | Light Bulb Socket | Threaded bulb-and-socket assembly |
 | Thread M8 | Small threaded fastener |
 | Thread M30 | Large threaded fastener |
-| Peg Insertion Plate | Tight-clearance peg alignment |
+| Peg Insertion Plate | Threaded 8 mm pins that must be aligned and then rotated down until seated |
 
-These attachments challenge grasp precision and fine alignment.
+These attachments challenge grasp precision, fine alignment, and the ability to keep a small part held while it is turned.
 
 ---
 
@@ -131,11 +131,16 @@ The composed tasks allow evaluation of multi-stage manipulation behavior under s
 | Precision Tasks | Light Bulb Socket |
 | Precision Tasks | Thread M8 |
 | Precision Tasks | Thread M30 |
-| Precision Tasks | Peg Insertion Plate |
+| Precision Tasks | Peg Insertion Plate (see note below) |
 | Assembly Tasks | Hidden Button |
 | Assembly Tasks | Lock and Key |
 | Assembly Tasks | Sliding Drawer |
 | Assembly Tasks | Shock Absorber |
+
+> **Note on the peg insertion plate.** The simulation assets for this attachment are in
+> `Simulation/Peg Insertion/`, but a printable STL is not yet exported. Until it is, the task can be
+> reproduced with `STL/Shock Absorber/Shock_Absorber_Base.stl` and
+> `STL/Shock Absorber/Shock_Absorber_Pin.stl`, which use the same threaded pin geometry.
 
 ---
 
@@ -159,7 +164,7 @@ The HiveBoard system was designed around consumer-grade FDM printers with a mini
 | Wall Count | 4 |
 | Top Layers | 5 |
 | Bottom Layers | 5 |
-| Infill | 20 to 40% |
+| Infill | 15 to 30%, see per-part table below |
 | Print Speed | 50 mm/s |
 | Nozzle Temperature | 200 to 220°C |
 | Bed Temperature | 50 to 60°C |
@@ -207,13 +212,22 @@ The HiveBoard project also includes simulation-ready CAD assets suitable for:
 
 The digital assets contain:
 
-- Joint definitions
+- Joint definitions with physical ranges and limits
 - Collision meshes
-- Mass properties
-- Revolute and prismatic joints
+- Mass properties estimated from part volume and PLA density
+- Revolute, continuous, and prismatic joints
 - URDF and USD exports
 
-This enables direct sim-to-real robotics experimentation.
+Screw motion, on the gate valves, the threaded fasteners, and the light bulb socket, is modelled as a
+coupled pair of joints, a continuous rotation about the thread axis and a prismatic translation along
+it, which reproduces the advance of the part without requiring a native helical joint type. The
+drawer, the lock, and the shock absorber carry their articulation in the USD assets.
+
+The assets have been checked to load in MuJoCo, PyBullet, and Isaac Sim, with each joint driven
+through its full range and no self-intersection in the rest configuration. Joint friction, mass, and
+inertia are nominal values rather than values identified from one printed instance, because contact
+properties depend on the printer, filament, and slicer calibration at each site. Override them in the
+asset files if you need tighter correspondence to your own print.
 
 ---
 
@@ -225,7 +239,18 @@ A reproducible operator-driven protocol is provided for benchmarking grippers, h
 - [`HOW_TO_FILL_TRIALS.md`](Documentation/HOW_TO_FILL_TRIALS.md): column-by-column instructions for the trial logging template.
 - [`trials.csv`](Documentation/trials.csv) and [`trials.xlsx`](Documentation/trials.xlsx): pre-populated logging template with one row per trial (5 trials per attachment, 65 rows total). Use the xlsx for filling in (frozen header, dropdowns, color-coded categories); the CSV is provided for scripts.
 
-The protocol prescribes 5 recorded trials per attachment per platform. Operators may control the manipulation system through a teleoperated arm or through a wearable interface or exoskeleton driving a gripper or hand directly. For each trial we record the outcome, completion time, attempts, regrasps, and, for the composed assembly tasks, the highest stage reached within the timeout.
+The protocol prescribes 5 recorded trials per attachment per platform. A platform is an end-effector plus whatever positions and commands it, so a teleoperated arm, a wearable device driven by the operator's own limb, and an exoskeleton are all in scope. For each trial we record the outcome, completion time, attempts, regrasps, and, for the composed assembly tasks, the highest stage reached within the timeout. Every unsuccessful trial also carries a failure cause from a fixed vocabulary (`grasp_geometry`, `kinematic_limit`, `perception`, `slip`, `force_limit`, `control_precision`, `other`), which is what makes failures countable across laboratories instead of readable only in free-text notes.
+
+---
+
+## Trial Data
+
+Completed trial logs from each participating laboratory are collected under `Documentation/results/`,
+one folder per laboratory, each containing the filled `trials.csv`, a setup photograph, and a short
+`platform.md` describing the end-effector and control interface.
+
+> **Status.** Data collection is in progress. Logs for the platforms reported in the paper will be
+> added here as each laboratory's results are finalised.
 
 ---
 
@@ -247,11 +272,16 @@ HiveBoard supports:
 ## Repository Structure
 
     /
-    ├── STL/             # printable parts
-    ├── CAD/             # source CAD files
-    ├── Simulation/      # URDF and USD with articulated joints
-    ├── Documentation/   # PROTOCOL.md, HOW_TO_FILL_TRIALS.md, trials.csv, trials.xlsx
-    ├── Images/          # photographs and renders
+    ├── STL/                      # printable parts
+    ├── CAD/                      # source CAD files
+    ├── Simulation/               # URDF and USD with articulated joints
+    ├── Documentation/
+    │   ├── PROTOCOL.md           # success criteria, timeouts, stages, failure vocabulary
+    │   ├── HOW_TO_FILL_TRIALS.md # column-by-column logging instructions
+    │   ├── trials.csv            # empty logging template (65 rows)
+    │   ├── trials.xlsx           # same template with dropdowns and validation
+    │   └── results/              # submitted trial logs, one folder per laboratory
+    ├── Images/                   # photographs and renders
     └── README.md
 
 ---
@@ -271,13 +301,16 @@ HiveBoard supports:
 If you use HiveBoard in research or publications, please cite the project paper:
 
 ```
-@inproceedings{hiveboard2026,
-  title  = {HiveBoard: An Open, Modular, 3D-Printed Dexterity Benchmark for Industrial Robotic Manipulation},
-  author = {<authors>},
-  booktitle = {<journal>},
-  year   = {2026}
+@article{hiveboard2026,
+  title   = {HiveBoard: An Open, Modular, 3D-Printed Benchmark of Industrial Mechanisms
+             for Robotic and Prosthetic Manipulation},
+  author  = {TODO: author list},
+  journal = {TODO: under review},
+  year    = {2026}
 }
 ```
+
+The paper is under review; this entry will be updated on acceptance.
 
 ---
 
