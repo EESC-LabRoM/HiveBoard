@@ -12,7 +12,7 @@ Demonstration video: https://youtu.be/kaYB_Oc64nA
 
 ## Overview
 
-HiveBoard is an open, modular, fully 3D-printable benchmark for manipulation of functional mechanisms. Manipulation is usually benchmarked on free objects, through grasping and pick-and-place of loose parts. The mechanisms that make manipulation useful are not free objects: a valve resists rotation, a screw advances only along its thread, a lock opens only after a key is inserted and turned. HiveBoard poses those tasks in a form any laboratory can print, and the attachments assume no particular gripper width, approach axis, or mounting frame, so a robot gripper, a dexterous hand, and a worn prosthetic hand can be scored on the same artifact under the same protocol.
+HiveBoard is an open, modular, accessible, fully 3D-printable benchmark for manipulation of functional mechanisms. Manipulation is usually benchmarked on free objects, through grasping and pick-and-place of loose parts. However, many manipulation tasks require the ability to operate different mechanisms and meet different constraints, such as turning a valve, advancing a screw that only engages along its thread, and opening a lock only after a key is inserted and turned. HiveBoard poses those tasks in a form any laboratory can print, and the attachments assume no particular gripper width, approach axis, or mounting frame, so a robot gripper, a dexterous hand, and a worn prosthetic hand can be scored on the same artifact under the same protocol.
 
 The platform is designed around three principles:
 
@@ -236,7 +236,7 @@ A reproducible operator-driven protocol is provided for benchmarking grippers, h
 - [`HOW_TO_FILL_TRIALS.md`](Documentation/HOW_TO_FILL_TRIALS.md): column-by-column instructions for the trial logging template.
 - [`trials.csv`](Documentation/trials.csv) and [`trials.xlsx`](Documentation/trials.xlsx): pre-populated logging template with one row per trial (5 trials per attachment, 65 rows total). Use the xlsx for filling in (frozen header, dropdowns, color-coded categories); the CSV is provided for scripts.
 
-The protocol prescribes 5 recorded trials per attachment per platform. A platform is an end-effector plus whatever positions and commands it, so a teleoperated arm, a wearable device driven by the operator's own limb, and an exoskeleton are all in scope. For each trial we record the outcome, completion time, attempts, regrasps, and, for the composed assembly tasks, the highest stage reached within the timeout. Every unsuccessful trial also carries a failure cause from a fixed vocabulary (`grasp_geometry`, `kinematic_limit`, `perception`, `slip`, `force_limit`, `control_precision`, `other`), which is what makes failures countable across laboratories instead of readable only in free-text notes.
+The protocol prescribes 5 recorded trials per attachment per platform. A platform is an end-effector plus whatever positions and commands it, so a teleoperated arm, a wearable device driven by the operator's own limb, and an exoskeleton are all in scope. For each trial we record the outcome, completion time, attempts, regrasps, and, for the composed assembly tasks, the highest stage reached within the timeout. Every unsuccessful trial also carries a failure cause from a fixed vocabulary (`grasp_geometry`, `kinematic_limit`, `perception`, `slip`, `force_limit`, `control_precision`, `other`).
 
 ---
 
@@ -307,7 +307,7 @@ If you use HiveBoard in research or publications, please cite the project paper:
 }
 ```
 
-The paper is under review; this entry will be updated on acceptance.
+The paper is under development; this entry will be updated on acceptance.
 
 ---
 
