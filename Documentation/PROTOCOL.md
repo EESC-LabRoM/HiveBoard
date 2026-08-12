@@ -97,7 +97,7 @@ No scripted assistance, replanning, or per-trial parameter tuning is permitted d
 | Light bulb | Bulb fully threaded until seated | 120 s |
 | Thread M8 | Bolt fully threaded along available length | 120 s |
 | Thread M30 | Bolt fully threaded along available length | 120 s |
-| Peg insertion | Free peg fully seated in the empty socket | 120 s |
+| Peg insertion | Free peg threaded into the empty socket until it seats | 120 s |
 
 **Composed assembly category (stage-wise scoring)**
 
