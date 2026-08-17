@@ -56,6 +56,16 @@ This modular architecture enables:
 
 ## Attachment Categories
 
+<p align="center">
+    <img src="Images/attachments_overview.png" width="100%">
+</p>
+
+<p align="center">
+    <em>The 13 attachments, each shown mounted on the honeycomb base and as an isolated render.
+    Panel (a) covers both ball-valve configurations, the lever alone and the lever with the
+    friction rings fitted, which are scored as separate trial sets.</em>
+</p>
+
 ### 1. Torque-Based Tasks
 
 <p align="center">
