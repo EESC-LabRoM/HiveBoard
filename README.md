@@ -1,4 +1,4 @@
-# HiveBoard: an Open, Modular, 3D-Printed Benchmark of Industrial Mechanisms
+# HiveBoard: An Open, Modular, 3D-Printed Benchmark of Industrial Mechanisms for Robotic and Prosthetic Manipulation
 
 <p align="center">
     <picture>
@@ -7,6 +7,8 @@
   <img alt="Project Logo" src="Images/HIVEBOARD_logo_light.png" width="50%">
     </picture>
 </p>
+
+Project page: https://hiveboard-bench.github.io
 
 Demonstration video: https://youtu.be/kaYB_Oc64nA
 
@@ -251,7 +253,8 @@ Spot Arm under tablet teleoperation, a LeRobot SO-101 under leader-follower tele
 ANYbotics ANYmal with a DynaArm commanded through virtual-reality controllers, and the Macao
 open-source prosthetic hand worn on the forearm. Each platform ran the full 65 trials. Results,
 including per-attachment success rates, completion times, failure causes, and the difficulty
-ordering the attachments impose across platforms, are reported in the project paper.
+ordering the attachments impose across platforms, are reported in the project paper and summarised
+on the project page, https://hiveboard-bench.github.io.
 
 Trial logs are held by the laboratories that produced them and are not distributed from this
 repository.
@@ -308,9 +311,15 @@ If you use HiveBoard in research or publications, please cite the project paper:
 @article{hiveboard2026,
   title   = {HiveBoard: An Open, Modular, 3D-Printed Benchmark of Industrial Mechanisms
              for Robotic and Prosthetic Manipulation},
-  author  = {TODO: author list},
-  journal = {TODO: under review},
-  year    = {2026}
+  author  = {Godoy, Ricardo V. and de Souza, Enzo F. and de Lange, Rudy De-Xin and
+             Negri, Juliano and Marsicano, Jo\~{a}o A. and van Halst, Victor and
+             Elanjimattathil Vijayan, Aravind and Capezzuto, Gianluca and
+             Angarola, Matheus P. and Tommaselli, Felipe A. G. and Baptista, Rafael R. and
+             van Berge, Meiko Adriana and Lahr, Gustavo J. G. and Ferrari Gerez, Lucas and
+             Becker, Marcelo},
+  journal = {Under review},
+  year    = {2026},
+  url     = {https://github.com/EESC-LabRoM/HiveBoard}
 }
 ```
 
