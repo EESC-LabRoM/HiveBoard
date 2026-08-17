@@ -333,7 +333,6 @@ If you use HiveBoard in research or publications, please cite the project paper:
 }
 ```
 
-
 The paper is under development; this entry will be updated on acceptance.
 
 ---
