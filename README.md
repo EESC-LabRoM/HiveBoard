@@ -91,7 +91,7 @@ Included components:
 | Light Bulb Socket | Threaded bulb-and-socket assembly |
 | Thread M8 | Small threaded fastener |
 | Thread M30 | Large threaded fastener |
-| Peg Insertion Plate | Threaded 8 mm pins that must be aligned and then rotated down until seated |
+| Peg Insertion Plate | Threaded 8 mm pins that must be aligned and then rotated down until seated, not a clearance fit |
 
 These attachments challenge grasp precision, fine alignment, and the ability to keep a small part held while it is turned.
 
@@ -236,18 +236,25 @@ A reproducible operator-driven protocol is provided for benchmarking grippers, h
 - [`HOW_TO_FILL_TRIALS.md`](Documentation/HOW_TO_FILL_TRIALS.md): column-by-column instructions for the trial logging template.
 - [`trials.csv`](Documentation/trials.csv) and [`trials.xlsx`](Documentation/trials.xlsx): pre-populated logging template with one row per trial (5 trials per attachment, 65 rows total). Use the xlsx for filling in (frozen header, dropdowns, color-coded categories); the CSV is provided for scripts.
 
-The protocol prescribes 5 recorded trials per attachment per platform. A platform is an end-effector plus whatever positions and commands it, so a teleoperated arm, a wearable device driven by the operator's own limb, and an exoskeleton are all in scope. For each trial we record the outcome, completion time, attempts, regrasps, and, for the composed assembly tasks, the highest stage reached within the timeout. Every unsuccessful trial also carries a failure cause from a fixed vocabulary (`grasp_geometry`, `kinematic_limit`, `perception`, `slip`, `force_limit`, `control_precision`, `other`).
+The protocol prescribes 5 recorded trials per attachment per platform. A platform is an end-effector plus whatever positions and commands it, so a teleoperated arm, a wearable device driven by the operator's own limb, and an exoskeleton are all in scope. For each trial we record the outcome, completion time, attempts, regrasps, whether the part was driven prehensilely or not, and, for the composed assembly tasks, the last stage completed within the timeout. Every unsuccessful trial also carries a failure cause from a fixed vocabulary (`grasp_geometry`, `kinematic_limit`, `perception`, `slip`, `force_limit`, `control_precision`, `other`).
+
+The gate valve success criterion is one full turn of the stem. Full travel from closed to open depends on the printed thread pitch, so it is not comparable across prints.
+
+Counting conventions are given in `PROTOCOL.md` and repeated in `HOW_TO_FILL_TRIALS.md`. Times are decimal seconds, `n_attempts` counts from 1, `n_regrasps` counts from 0, and `stage_reached` is the last stage completed instead of the stage at which the trial stopped. Returned logs have disagreed on each of these, so please check them before submitting.
 
 ---
 
-## Trial Data
+## Validation
 
-Completed trial logs from each participating laboratory are collected under `Documentation/results/`,
-one folder per laboratory, each containing the filled `trials.csv`, a setup photograph, and a short
-`platform.md` describing the end-effector and control interface.
+The board has been run under this protocol at four laboratories, on a Boston Dynamics Spot with the
+Spot Arm under tablet teleoperation, a LeRobot SO-101 under leader-follower teleoperation, an
+ANYbotics ANYmal with a DynaArm commanded through virtual-reality controllers, and the Macao
+open-source prosthetic hand worn on the forearm. Each platform ran the full 65 trials. Results,
+including per-attachment success rates, completion times, failure causes, and the difficulty
+ordering the attachments impose across platforms, are reported in the project paper.
 
-> **Status.** Data collection is in progress. Logs for the platforms reported in the paper will be
-> added here as each laboratory's results are finalised.
+Trial logs are held by the laboratories that produced them and are not distributed from this
+repository.
 
 ---
 
@@ -276,8 +283,7 @@ HiveBoard supports:
     │   ├── PROTOCOL.md           # success criteria, timeouts, stages, failure vocabulary
     │   ├── HOW_TO_FILL_TRIALS.md # column-by-column logging instructions
     │   ├── trials.csv            # empty logging template (65 rows)
-    │   ├── trials.xlsx           # same template with dropdowns and validation
-    │   └── results/              # submitted trial logs, one folder per laboratory
+    │   └── trials.xlsx           # same template with dropdowns and validation
     ├── Images/                   # photographs and renders
     └── README.md
 
@@ -290,6 +296,7 @@ HiveBoard supports:
 - Minor sanding can improve threaded part performance.
 - Press-fit tolerances depend on printer calibration; print one cell of the base and one attachment first to verify the fit before committing to a full set.
 - Functional parts benefit from slower print speeds.
+- Press-fit parts can work loose under a vertical mount, and printed mechanisms have broken under jittering or high-gain command signals. Reprint the finer attachments between sessions if you drive them hard, and check the seating of every attachment before each session.
 
 ---
 
