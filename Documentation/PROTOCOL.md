@@ -59,7 +59,7 @@ The canonical print profile lives in the project README. Summary, for convenienc
 
 ## 3. Physical Setup
 
-1. Fix the HiveBoard base to a rigid surface within the operator's working volume. The base may be mounted horizontally on a tabletop or vertically on a fixture. Record the orientation used.
+1. Fix the HiveBoard base to a rigid surface within the operator's working volume. The base may be mounted horizontally on a tabletop or vertically on a fixture. State which one in `platform.md`, since a vertical mount changes the approach direction for every attachment and makes press-fit release more likely.
 2. Insert the attachments into their designated cells. Each attachment seats by press-fit; verify all attachments are fully seated before starting trials.
 3. Position the manipulation system so that all attachments are reachable without base repositioning during a trial.
 4. Photograph the setup and store the image as `setup.jpg`.
@@ -76,7 +76,9 @@ For each `(platform, attachment)` pair:
 
 The ball valve is run as two separate sets of 5 trials: once without the friction ring (`valve_ball`) and once with the ring fitted (`valve_ball_ring`).
 
-No scripted assistance, replanning, or per-trial parameter tuning is permitted during recorded trials. The operator may restart their motion within a trial (this counts as a re-grasp, not a new trial).
+No scripted assistance, replanning, or per-trial parameter tuning is permitted during recorded trials. The operator may restart their motion within a trial, which counts as a regrasp instead of a new trial.
+
+6. **Broken or displaced parts.** If a printed part breaks or leaves its cell during a trial, record the trial as it stood, describe the damage in the `notes` column, and reprint or reseat the part before continuing. Do not silently rerun the trial. Printed mechanisms have failed under jittering or high-gain command signals in previous sessions, and those events are part of the result.
 
 ## 5. Per-Attachment Success Criteria and Timeouts
 
@@ -86,8 +88,8 @@ No scripted assistance, replanning, or per-trial parameter tuning is permitted d
 |---|---|---|
 | Ball valve | Handle rotated 90° from closed to open | 60 s |
 | Ball valve + friction ring | Handle rotated 90° from closed to open with the ring fitted | 90 s |
-| Gate valve, small | Stem rotated from fully closed to fully open | 90 s |
-| Gate valve, large | Stem rotated from fully closed to fully open | 120 s |
+| Gate valve, small | Stem rotated one full turn from the closed position | 90 s |
+| Gate valve, large | Stem rotated one full turn from the closed position | 120 s |
 | Circuit breaker | Toggle moved from one state to the other and held | 60 s |
 
 **Precision category**
@@ -98,6 +100,8 @@ No scripted assistance, replanning, or per-trial parameter tuning is permitted d
 | Thread M8 | Bolt fully threaded along available length | 120 s |
 | Thread M30 | Bolt fully threaded along available length | 120 s |
 | Peg insertion | Free peg threaded into the empty socket until it seats | 120 s |
+
+The gate valve criterion is one full turn of the stem, not travel from fully closed to fully open. A platform that can turn the stem once can repeat the motion, and the number of turns to full travel depends on the printed thread pitch, so full travel is not comparable across prints. If your trials ran to full travel, report the time to the first complete turn and note it in the `notes` column.
 
 **Composed assembly category (stage-wise scoring)**
 
@@ -116,6 +120,20 @@ A trial is a full success only if all stages complete within the timeout. Partia
 
 Each trial fills one row of `trials.csv` (template provided alongside this protocol). See `HOW_TO_FILL_TRIALS.md` for column-by-column instructions.
 
+### Logging conventions
+
+These conventions exist because logs returned from different laboratories have disagreed on all five points, which leaves the columns incomparable until they are reconciled by hand.
+
+| Column | Convention |
+|---|---|
+| `completion_time_s` | Decimal seconds, as a plain number. Not milliseconds, not a text string, not a clock time, not a date. Write `12.9`, not `12923`, not `12.9 s`, not `timeout`. Leave the cell empty when the outcome is not `success`. |
+| `n_attempts` | Discrete attempts at the task within the trial, counted from 1. An attempt ends when the operator abandons the current approach and starts over. Corrective motions inside one continuous approach are not separate attempts. |
+| `n_regrasps` | Times the end-effector released the part and closed on it again, counted from 0. A trial with one grasp and no release is 0. A platform that cannot regrasp records 0. |
+| `stage_reached` | The number of the last stage the trial completed, from 0 to 3. A successful trial reaches its final stage. A trial that never completed stage 1 is 0. Fill only for the assembly attachments. |
+| `strategy` | `prehensile` when the end-effector closed around the part and held it, `non_prehensile` when the part was driven by pushing or pressing, or by a finger or jaw entered into an opening without an enclosing grip. |
+
+Fill `n_attempts`, `n_regrasps`, and `strategy` on unsuccessful trials as well. A failed trial still had attempts, and how a platform approached a part it could not complete is as informative as how it approached one it could.
+
 For every trial whose outcome is `fail`, `timeout`, or `safety_stop`, record the primary failure cause in the `failure_cause` column using this closed vocabulary:
 
 | Cause | Meaning |
@@ -126,14 +144,14 @@ For every trial whose outcome is `fail`, `timeout`, or `safety_stop`, record the
 | `slip` | A grasp was acquired but lost during execution. |
 | `force_limit` | The grasp or actuation force the platform can produce is insufficient for the task, even though the grasp and the motion are otherwise correct (e.g., holding a screw against thread friction). |
 | `control_precision` | The available control resolution was too coarse for the clearance or force the task requires. |
-| `other` | None of the above; describe in `notes`. |
+| `other` | None of the above; describe in `notes`. Use this for a trial ended by a broken printed part. |
 
 Pick the single dominant cause per trial. Leave the column blank on `success` rows. The closed vocabulary is what makes failure modes comparable across laboratories, so use `other` plus a note only when nothing else fits.
 
 Alongside `trials.csv`, each lab provides:
 
 - `setup.jpg`, photograph of the physical setup.
-- `platform.md`, short description of the manipulation system: end-effector (gripper or hand), control interface (teleoperated arm or wearable), and any relevant control mode or calibration notes.
+- `platform.md`, short description of the manipulation system: end-effector (gripper or hand), control interface (teleoperated arm or wearable), board mounting orientation, and any relevant control mode or calibration notes.
 
 ## 7. Submission
 
@@ -151,5 +169,9 @@ Each collaborating lab returns a single archive containing:
 - [ ] 5 recorded trials per attachment, all logged in `trials.csv`. The ball valve appears twice, once without the friction ring and once with it.
 - [ ] Timeouts enforced as specified.
 - [ ] `failure_cause` filled from the closed vocabulary for every `fail`, `timeout`, and `safety_stop` row.
-- [ ] `setup.jpg` and `platform.md` included.
+- [ ] `completion_time_s` in decimal seconds on every `success` row, and empty everywhere else.
+- [ ] `n_attempts` counted from 1 and `n_regrasps` from 0, on failed rows as well as successful ones.
+- [ ] `strategy` filled on every row.
+- [ ] Any broken or reseated part described in `notes`.
+- [ ] `setup.jpg` and `platform.md` included, with the board mounting orientation stated.
 - [ ] No operator names or identifiers in any field.
