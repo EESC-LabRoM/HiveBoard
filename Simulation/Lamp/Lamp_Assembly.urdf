@@ -28,7 +28,13 @@
     </collision>
   </link>
   <link name="lamp_pivot">
-    <inertial><origin xyz="-0.000001 -0.000001 0.015000" rpy="0 0 0" /><mass value="0.0219" /><inertia ixx="2.97044e-06" ixy="0" ixz="0" iyy="2.9701e-06" iyz="0" izz="2.65895e-06" /></inertial><visual>
+    <!-- CAD mass is 22 g; scaled to 0.20 kg so GPU PhysX grasp contacts stay stable. -->
+    <inertial>
+      <origin xyz="0.030000 0.000000 0.000000" rpy="0 0 0" />
+      <mass value="0.20" />
+      <inertia ixx="7.84e-05" ixy="0" ixz="0" iyy="1.46e-04" iyz="0" izz="1.46e-04" />
+    </inertial>
+    <visual>
       <origin xyz="0. 0. 0." rpy="-1.5434489 -1.4170299 1.5429671" />
       <geometry>
         <mesh filename="meshes/Corpo1_Mesh.obj" scale="1. 1. 1." />
@@ -46,22 +52,18 @@
         <mesh filename="meshes/tn__Corpo12_j7m1J_Mesh.obj" scale="1. 1. 1." />
       </geometry>
     </visual>
+    <!-- Primitive colliders along link +X. CAD shells as convex hulls fill the
+         bulb and generate thousands of contact patches on grasp. -->
     <collision>
-      <origin xyz="0. 0. 0." rpy="-1.5434489 -1.4170299 1.5429671" />
+      <origin xyz="-0.015 0. 0." rpy="0. 1.5707964 0." />
       <geometry>
-        <mesh filename="meshes/Corpo1_Mesh.obj" scale="1. 1. 1." />
+        <cylinder radius="0.014" length="0.030" />
       </geometry>
     </collision>
     <collision>
-      <origin xyz="0. 0. 0." rpy="-1.5434489 -1.4170299 1.5429671" />
+      <origin xyz="0.035 0. 0." rpy="0. 1.5707964 0." />
       <geometry>
-        <mesh filename="meshes/tn__Corpo11_j7m1J_Mesh.obj" scale="1. 1. 1." />
-      </geometry>
-    </collision>
-    <collision>
-      <origin xyz="0. 0. 0." rpy="-1.5434489 -1.4170299 1.5429671" />
-      <geometry>
-        <mesh filename="meshes/tn__Corpo12_j7m1J_Mesh.obj" scale="1. 1. 1." />
+        <cylinder radius="0.028" length="0.080" />
       </geometry>
     </collision>
   </link>
