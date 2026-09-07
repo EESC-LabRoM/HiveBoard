@@ -1,323 +1,170 @@
-# HiveBoard: An Open, Modular, 3D-Printed Benchmark of Industrial Mechanisms for Robotic and Prosthetic Manipulation
+# HiveBoard
 
 <p align="center">
-    <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="Images/HIVEBOARD_logo_dark.png" width="50%">
-  <source media="(prefers-color-scheme: light)" srcset="Images/HIVEBOARD_logo_light.png" width="50%">
-  <img alt="Project Logo" src="Images/HIVEBOARD_logo_light.png" width="50%">
-    </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="Images/HIVEBOARD_logo_dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="Images/HIVEBOARD_logo_light.png">
+    <img alt="HiveBoard logo" src="Images/HIVEBOARD_logo_light.png" width="50%">
+  </picture>
 </p>
 
-Project page: https://hiveboard-bench.github.io
+[Project website](https://hiveboard-bench.github.io) · [Documentation](https://www.ricardovgodoy.com/hiveboard-docs/) · [Evaluation Runner](https://www.ricardovgodoy.com/hiveboard-docs/benchmark/evaluation-runner) · [Demonstration video](https://youtu.be/kaYB_Oc64nA)
 
-Demonstration video: https://youtu.be/kaYB_Oc64nA
+HiveBoard is a modular, 3D-printable benchmark of industrial mechanisms for robotic and prosthetic manipulation. Its attachments require constrained motions such as valve rotation, threading, key insertion, and drawer opening and closing.
 
-## Overview
+A seven-cell honeycomb base accepts interchangeable attachments through a shared press-fit interface. The same board and protocol can be used to evaluate robot grippers, dexterous hands, teleoperated manipulators, and worn prosthetic hands.
 
-HiveBoard is an open, modular, accessible, fully 3D-printable benchmark for manipulation of functional mechanisms. Manipulation is usually benchmarked on free objects, through grasping and pick-and-place of loose parts. However, many manipulation tasks require the ability to operate different mechanisms and meet different constraints, such as turning a valve, advancing a screw that only engages along its thread, and opening a lock only after a key is inserted and turned. HiveBoard poses those tasks in a form any laboratory can print, and the attachments assume no particular gripper width, approach axis, or mounting frame, so a robot gripper, a dexterous hand, and a worn prosthetic hand can be scored on the same artifact under the same protocol.
+This repository contains the printable parts, CAD models, articulated simulation assets, evaluation protocol, and trial templates.
 
-The platform is designed around three principles:
+## Getting started
 
-- **Low-cost reproducibility** using consumer-grade FDM 3D printers
-- **Modular task expansion** through interchangeable attachments
-- **Simulation-ready assets** for robotics research and sim-to-real workflows
+1. Read the [printing guide](https://www.ricardovgodoy.com/hiveboard-docs/hardware/printing) and the recommended settings below.
+2. Print one honeycomb cell and one attachment base to check the press fit before printing the full set.
+3. [Assemble and mount the board](https://www.ricardovgodoy.com/hiveboard-docs/hardware/assembly). Check that each mechanism moves freely and each attachment remains seated.
+4. Read the [evaluation protocol](Documentation/PROTOCOL.md), including familiarization, success criteria, timeouts, and counting conventions.
+5. Record **five trials for each of the 13 conditions (65 trials total)** using the [Evaluation Runner](https://www.ricardovgodoy.com/hiveboard-docs/benchmark/evaluation-runner) or the [CSV](Documentation/trials.csv) / [XLSX](Documentation/trials.xlsx) template.
 
-The system consists of a **hexagonal honeycomb base** that accepts interchangeable attachments representing industrial manipulation tasks such as:
+The documentation and runner are currently maintained in [ricardovgodoy/hiveboard-docs](https://github.com/ricardovgodoy/hiveboard-docs), ahead of migration to the project website.
 
-- Valves
-- Circuit breakers
-- Threaded fasteners
-- Peg insertion
-- Drawer manipulation
-- Lock-and-key
-- Shock absorber assemblies
-
-All components in this repository are printable in **PLA filament**.
-
----
-
-## Project Architecture
+## Board and attachments
 
 <p align="center">
-    <img src="Images/Hiveboard4.png" width="50%">
+  <img src="Images/Hiveboard4.png" alt="HiveBoard honeycomb base with mounted mechanisms" width="50%">
 </p>
 
-
-The HiveBoard base contains seven hexagonal cells arranged in a honeycomb pattern. Each attachment uses a standardized press-fit mounting geometry, allowing rapid reconfiguration without screws or fasteners.
-
-This modular architecture enables:
-
-- Fast task swapping
-- Difficulty scaling
-- Multi-task robotic evaluations
-- Easy extension with new attachments
-
----
-
-## Attachment Categories
+Attachments share the same mounting geometry. The shock absorber occupies two adjacent cells. The ball valve is evaluated in two configurations: without a friction ring and with a ring fitted.
 
 <p align="center">
-    <img src="Images/attachments_overview.png" width="100%">
+  <img src="Images/attachments_overview.png" alt="HiveBoard mechanisms shown on the base and as individual renders" width="100%">
 </p>
 
-<p align="center">
-    <em>The 13 attachments, each shown mounted on the honeycomb base and as an isolated render.
-    Panel (a) covers both ball-valve configurations, the lever alone and the lever with the
-    friction rings fitted, which are scored as separate trial sets.</em>
-</p>
+| Family | Condition | Task |
+|---|---|---|
+| Torque | Ball valve | Rotate the lever 90° from closed to open |
+| Torque | Ball valve with friction ring | Complete the same rotation with the ring fitted |
+| Torque | Small gate valve | Rotate the stem one full turn |
+| Torque | Large gate valve | Rotate the stem one full turn |
+| Torque | Circuit breaker | Move the toggle to the opposite state and hold it |
+| Precision | Light bulb and socket | Thread the bulb until seated |
+| Precision | M8 threaded fastener | Thread the bolt along the available length |
+| Precision | M30 threaded fastener | Thread the bolt along the available length |
+| Precision | Threaded peg insertion | Align and thread the free 8 mm peg into the socket until seated |
+| Composed assembly | Covered button | Open the cover and press the button |
+| Composed assembly | Lock and key | Grasp the key, insert it vertically, and turn it to unlock |
+| Composed assembly | Sliding drawer | Grasp the handle, pull the drawer open, and push it closed |
+| Composed assembly | Shock absorber | Grasp, align, and fully insert the pin |
 
-### 1. Torque-Based Tasks
+The friction-ring accessory includes four rings with different rotational resistance. Record the configuration used. The gate-valve criterion is **one full turn of the stem**; full travel depends on the printed thread pitch. For composed tasks, record the last completed stage as well as the overall outcome.
 
-<p align="center">
-    <img src="Images/Torque_1.png" width="50%">
-</p>
+See [the protocol](Documentation/PROTOCOL.md) for timeouts and stage definitions.
 
-These tasks evaluate force control and rotational manipulation capabilities.
+## Recommended 3D printing settings
 
-Included components:
+Use PLA and a consumer-grade FDM printer. A **300 × 300 mm build area** accommodates the complete honeycomb base without splitting it. Thread test pieces are included in [`STL/Threads/`](STL/Threads/) for checking print tolerances before producing the complete mechanisms.
 
-| Attachment | Description |
-|---|---|
-| Ball Valve | Quarter-turn valve with a lever handle |
-| Friction Rings | Snap-on rings (set of four) that increase rotational friction, and therefore torque resistance, on the ball valve |
-| Gate Valve (Small) | Compact gate valve with a smaller handwheel |
-| Gate Valve (Large) | Larger gate valve with a bigger handwheel and more mechanical advantage |
-| Circuit Breaker | Toggle-style industrial breaker |
+Detailed assembly and printing instructions are available in the [module-specific guide (PDF)](https://github.com/user-attachments/files/29721347/HiveBoard.-.Module-Specific.Instructions.1.pdf).
 
-The friction-ring system gives multiple torque levels on the ball valve without printing additional valves. Each ring sets a different rotational friction.
-
----
-
-### 2. Precision-Based Tasks
-
-<p align="center">
-    <img src="Images/Precision_1.png" width="50%">
-</p>
-
-These tasks focus on alignment, insertion, and fine manipulation.
-
-Included components:
-
-| Attachment | Description |
-|---|---|
-| Light Bulb Socket | Threaded bulb-and-socket assembly |
-| Thread M8 | Small threaded fastener |
-| Thread M30 | Large threaded fastener |
-| Peg Insertion Plate | Threaded 8 mm pins that must be aligned and then rotated down until seated, not a clearance fit |
-
-These attachments challenge grasp precision, fine alignment, and the ability to keep a small part held while it is turned.
-
----
-
-### 3. Composed Assembly Tasks
-
-<p align="center">
-    <img src="Images/ComposedAssembly_3.png" width="50%">
-</p>
-
-These tasks involve multiple sequential manipulation stages.
-
-Included components:
-
-| Attachment | Description |
-|---|---|
-| Hidden Push Button | Hinged cover plus button press |
-| Lock and Key | Insertion and rotational unlocking |
-| Sliding Drawer | Linear motion manipulation |
-| Shock Absorber | Multi-part assembly that occupies two adjacent cells |
-
-The composed tasks allow evaluation of multi-stage manipulation behavior under stage-wise scoring.
-
----
-
-## Included STL Components
-
-| Category | Part |
-|---|---|
-| Base System | Hexagonal Honeycomb Base |
-| Torque Tasks | Ball Valve |
-| Torque Tasks | Friction Rings |
-| Torque Tasks | Gate Valve, Small |
-| Torque Tasks | Gate Valve, Large |
-| Torque Tasks | Circuit Breaker |
-| Precision Tasks | Light Bulb Socket |
-| Precision Tasks | Thread M8 |
-| Precision Tasks | Thread M30 |
-| Precision Tasks | Peg Insertion Plate (see note below) |
-| Assembly Tasks | Hidden Button |
-| Assembly Tasks | Lock and Key |
-| Assembly Tasks | Sliding Drawer |
-| Assembly Tasks | Shock Absorber |
-
-We have included test files for printing the threads to ensure a successful print without wasting filament.
-
----
-
-## Recommended 3D Printing Settings
-
-Full Guide: [HiveBoard - Module-Specific Instructions.pdf](https://github.com/user-attachments/files/29721347/HiveBoard.-.Module-Specific.Instructions.1.pdf)
-
-
-
-**Recommended Print Bed Size:** 300 × 300 mm.
-
-The HiveBoard system was designed around consumer-grade FDM printers with a minimum build volume of 300 × 300 mm, allowing the complete honeycomb base and all attachments to be printed without splitting large structural parts. This ensures better dimensional accuracy, improved press-fit consistency between modules, and simpler assembly across different printers and laboratories.
-
-### Standard PLA Profile
+### PLA profile
 
 | Setting | Value |
 |---|---|
 | Material | PLA |
-| Nozzle Diameter | 0.4 mm |
-| Layer Height | 0.20 mm |
-| Wall Count | 4 |
-| Top Layers | 5 |
-| Bottom Layers | 5 |
-| Infill | 15 to 30%, see per-part table below |
-| Print Speed | 50 mm/s |
-| Nozzle Temperature | 200 to 220°C |
-| Bed Temperature | 50 to 60°C |
-| Cooling Fan | 100% |
+| Nozzle diameter | 0.4 mm |
+| Layer height | 0.20 mm |
+| Wall count | 4 |
+| Top / bottom layers | 5 / 5 |
+| Infill | 15–30%, according to part type |
+| Print speed | 50 mm/s |
+| Nozzle temperature | 200–220 °C |
+| Bed temperature | 50–60 °C |
+| Cooling fan | 100% |
 | Supports | Only where required |
-| Adhesion Type | Skirt or Brim |
+| Bed adhesion | Skirt or brim |
 
----
+### Infill
 
-### Recommended Infill Per Part Type
-
-| Part Type | Recommended Infill |
+| Part type | Infill |
 |---|---|
-| Base Structure | 20% |
-| Mechanical Parts | 25% |
-| Torque Components | 30% |
+| Base structure | 20% |
+| Mechanical parts | 25% |
+| Torque components | 30% |
 | Threads | 25% |
-| Decorative Covers | 15% |
+| Decorative covers | 15% |
 
----
+### Orientation
 
-### Suggested Print Orientation
-
-| Component Type | Orientation |
+| Component | Orientation |
 |---|---|
-| Threads / Screws | Vertical |
+| Threads and screws | Vertical |
 | Nuts | Flat |
-| Valves | Handle Up |
-| Drawer | Flat on largest face |
+| Valves | Handle up |
+| Drawer | Largest face on the bed |
 | Pegs | Vertical |
-| Shock Absorber Parts | Sideways |
+| Shock absorber parts | Sideways |
 
----
+Remove stringing and support material, check mating surfaces, and test the threads by hand. Record sanding, lubrication, and dimensional adjustments with the evaluation. Inspect attachment seating before each session and after any displacement or damage.
 
-## Simulation Compatibility
+## Evaluation and trial records
 
-<!-- TODO: add a simulation screenshot here, e.g. Images/simulation_assets.png -->
+A complete evaluation contains **65 recorded trials**, including separate five-trial blocks for the two ball-valve configurations. Keep the platform configuration and control method consistent within the recorded trial blocks.
 
-The HiveBoard project also includes simulation-ready CAD assets suitable for:
+For each trial, record:
 
-- MuJoCo
-- PyBullet
-- Isaac Sim
-- ROS-based simulators
+- outcome: `success`, `fail`, `timeout`, or `safety_stop`;
+- completion time in decimal seconds, for successful trials only;
+- attempts counted from 1 and regrasps counted from 0;
+- prehensile or non-prehensile strategy;
+- last completed stage for composed tasks; and
+- one primary failure cause for unsuccessful trials.
 
-The digital assets contain:
+Use [`HOW_TO_FILL_TRIALS.md`](Documentation/HOW_TO_FILL_TRIALS.md) for the column definitions and allowed failure causes. Preserve trials involving broken or displaced parts and describe the event in `notes`.
 
-- Joint definitions with physical ranges and limits
-- Collision meshes
-- Mass properties estimated from part volume and PLA density
-- Revolute, continuous, and prismatic joints
-- URDF and USD exports
+### Browser-based evaluation
 
-Screw motion, on the gate valves, the threaded fasteners, and the light bulb socket, is modelled as a
-coupled pair of joints, a continuous rotation about the thread axis and a prismatic translation along
-it, which reproduces the advance of the part without requiring a native helical joint type. The
-drawer, the lock, and the shock absorber carry their articulation in the USD assets.
+The [Evaluation Runner](https://www.ricardovgodoy.com/hiveboard-docs/benchmark/evaluation-runner) displays task instructions and example videos, provides a countdown and timer, and exports the trial records. Begin the first commanded task motion when the countdown reaches zero. The evaluator determines whether the success criterion has been met.
 
-The assets have been checked to load in MuJoCo, PyBullet, and Isaac Sim, with each joint driven
-through its full range and no self-intersection in the rest configuration. Joint friction, mass, and
-inertia are nominal values rather than values identified from one printed instance, because contact
-properties depend on the printer, filament, and slicer calibration at each site. Override them in the
-asset files if you need tighter correspondence to your own print.
+Record every trial with an external camera, keeping the board, end-effector, and final task state visible. Once all 65 trial entries and required setup details are complete, the runner generates a results ZIP with the CSV, platform description, manifest, session backup, and recording filenames.
 
----
+Attach the setup photograph in the runner or add it to the extracted ZIP as `setup.jpg`. Add the 65 recordings to `videos/` using the generated filenames. The runner saves records locally and does not upload submissions to the organizers.
 
-## Evaluation Protocol
+## Simulation assets
 
-A reproducible operator-driven protocol is provided for benchmarking grippers, hands, and policies on HiveBoard:
+[`Simulation/`](Simulation/) contains URDF and USD assets, visual and collision meshes, joint definitions, and nominal physical properties. The mechanisms use revolute, continuous, and prismatic joints. Threaded motion is represented by coupled rotation and translation; drawer, lock, and shock-absorber articulation is provided in the USD assets.
 
-- [`PROTOCOL.md`](Documentation/PROTOCOL.md): the full protocol, including success criteria, per-attachment timeouts, and stage definitions for the composed assembly tasks.
-- [`HOW_TO_FILL_TRIALS.md`](Documentation/HOW_TO_FILL_TRIALS.md): column-by-column instructions for the trial logging template.
-- [`trials.csv`](Documentation/trials.csv) and [`trials.xlsx`](Documentation/trials.xlsx): pre-populated logging template with one row per trial (5 trials per attachment, 65 rows total). Use the xlsx for filling in (frozen header, dropdowns, color-coded categories); the CSV is provided for scripts.
+Friction, mass, and inertia are nominal values. Check joint motion, collision geometry, and physical parameters in the simulator used for an experiment, and report any parameter overrides.
 
-The protocol prescribes 5 recorded trials per attachment per platform. A platform is an end-effector plus whatever positions and commands it, so a teleoperated arm, a wearable device driven by the operator's own limb, and an exoskeleton are all in scope. For each trial we record the outcome, completion time, attempts, regrasps, whether the part was driven prehensilely or not, and, for the composed assembly tasks, the last stage completed within the timeout. Every unsuccessful trial also carries a failure cause from a fixed vocabulary (`grasp_geometry`, `kinematic_limit`, `perception`, `slip`, `force_limit`, `control_precision`, `other`).
+Isaac Lab environments and training code are maintained separately in [EESC-LabRoM/isaaclab-hiveboard](https://github.com/EESC-LabRoM/isaaclab-hiveboard). See the [simulation documentation](https://www.ricardovgodoy.com/hiveboard-docs/simulation/assets) for asset usage and the [Isaac Lab guide](https://www.ricardovgodoy.com/hiveboard-docs/simulation/isaac-lab) for installation and commands.
 
-The gate valve success criterion is one full turn of the stem. Full travel from closed to open depends on the printed thread pitch, so it is not comparable across prints.
+## Reported evaluations
 
-Counting conventions are given in `PROTOCOL.md` and repeated in `HOW_TO_FILL_TRIALS.md`. Times are decimal seconds, `n_attempts` counts from 1, `n_regrasps` counts from 0, and `stage_reached` is the last stage completed instead of the stage at which the trial stopped. Returned logs have disagreed on each of these, so please check them before submitting.
+HiveBoard has been evaluated at four laboratories using:
 
----
+| Platform | Control |
+|---|---|
+| Boston Dynamics Spot with Spot Arm | Native tablet teleoperation |
+| LeRobot SO-101 | Leader–follower teleoperation |
+| ANYbotics ANYmal with DynaArm | Virtual-reality controllers |
+| Macao prosthetic hand | Worn on the operator's forearm |
 
-## Validation
+Each platform ran all 65 trials. Results and demonstration videos are available on the [project website](https://hiveboard-bench.github.io). The original trial logs are held by the contributing laboratories and are not distributed in this repository.
 
-The board has been run under this protocol at four laboratories, on a Boston Dynamics Spot with the
-Spot Arm under tablet teleoperation, a LeRobot SO-101 under leader-follower teleoperation, an
-ANYbotics ANYmal with a DynaArm commanded through virtual-reality controllers, and the Macao
-open-source prosthetic hand worn on the forearm. Each platform ran the full 65 trials. Results,
-including per-attachment success rates, completion times, failure causes, and the difficulty
-ordering the attachments impose across platforms, are reported in the project paper and summarised
-on the project page, https://hiveboard-bench.github.io.
+## Repository contents
 
-Trial logs are held by the laboratories that produced them and are not distributed from this
-repository.
+| Directory | Contents |
+|---|---|
+| [`STL/`](STL/) | Printable parts and thread test pieces |
+| [`CAD/`](CAD/) | Editable source geometry |
+| [`Simulation/`](Simulation/) | Articulated assets and meshes |
+| [`Documentation/`](Documentation/) | Protocol, logging instructions, and CSV/XLSX templates |
+| [`Images/`](Images/) | Photographs, logos, and renders |
 
----
-
-## Research Applications
-
-HiveBoard supports:
-
-- Robotic manipulation benchmarking.
-- Gripper and dexterous-hand evaluation.
-- Teleoperation experiments.
-- Wearable-interface and exoskeleton evaluation.
-- Reinforcement learning.
-- Vision-language-action model evaluation.
-- Sim-to-real transfer research.
-- Industrial robotics training datasets.
-
----
-
-## Repository Structure
-
-    /
-    ├── STL/                      # printable parts
-    ├── CAD/                      # source CAD files
-    ├── Simulation/               # URDF and USD with articulated joints
-    ├── Documentation/
-    │   ├── PROTOCOL.md           # success criteria, timeouts, stages, failure vocabulary
-    │   ├── HOW_TO_FILL_TRIALS.md # column-by-column logging instructions
-    │   ├── trials.csv            # empty logging template (65 rows)
-    │   └── trials.xlsx           # same template with dropdowns and validation
-    ├── Images/                   # photographs and renders
-    └── README.md
-
----
-
-## Notes
-
-- All parts are designed for consumer-grade FDM printers.
-- PLA is the recommended material for reproducibility.
-- Minor sanding can improve threaded part performance.
-- Press-fit tolerances depend on printer calibration; print one cell of the base and one attachment first to verify the fit before committing to a full set.
-- Functional parts benefit from slower print speeds.
-- Press-fit parts can work loose under a vertical mount, and printed mechanisms have broken under jittering or high-gain command signals. Reprint the finer attachments between sessions if you drive them hard, and check the seating of every attachment before each session.
-
----
+For a new attachment, reuse the mounting interface and document its initial state, success criterion, timeout, and reset procedure. See [Adding an attachment](https://www.ricardovgodoy.com/hiveboard-docs/guides/new-attachment).
 
 ## Citation
 
-If you use HiveBoard in research or publications, please cite the project paper:
+If you use HiveBoard in your research, cite the project paper:
 
-```
+```bibtex
 @article{hiveboard2026,
   title   = {HiveBoard: An Open, Modular, 3D-Printed Benchmark of Industrial Mechanisms
              for Robotic and Prosthetic Manipulation},
@@ -332,10 +179,6 @@ If you use HiveBoard in research or publications, please cite the project paper:
   url     = {https://github.com/EESC-LabRoM/HiveBoard}
 }
 ```
-
-The paper is under development; this entry will be updated on acceptance.
-
----
 
 ## License
 
