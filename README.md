@@ -8,7 +8,7 @@
   </picture>
 </p>
 
-[Project website](https://hiveboard-bench.github.io) · [Documentation](https://www.ricardovgodoy.com/hiveboard-docs/) · [Evaluation Runner](https://www.ricardovgodoy.com/hiveboard-docs/benchmark/evaluation-runner) · [Demonstration video](https://youtu.be/kaYB_Oc64nA)
+[Project website](https://hiveboard-bench.github.io) · [Documentation](https://hiveboard-bench.github.io/hivedocs/) · [Evaluation Runner](https://hiveboard-bench.github.io/hivedocs/benchmark/evaluation-runner) · [Demonstration video](https://youtu.be/kaYB_Oc64nA)
 
 HiveBoard is a modular, 3D-printable benchmark of industrial mechanisms for robotic and prosthetic manipulation. Its attachments require constrained motions such as valve rotation, threading, key insertion, and drawer opening and closing.
 
@@ -18,13 +18,13 @@ This repository contains the printable parts, CAD models, articulated simulation
 
 ## Getting started
 
-1. Read the [printing guide](https://www.ricardovgodoy.com/hiveboard-docs/hardware/printing) and the recommended settings below.
+1. Read the [printing guide](https://hiveboard-bench.github.io/hivedocs/hardware/printing) and the recommended settings below.
 2. Print one honeycomb cell and one attachment base to check the press fit before printing the full set.
-3. [Assemble and mount the board](https://www.ricardovgodoy.com/hiveboard-docs/hardware/assembly). Check that each mechanism moves freely and each attachment remains seated.
+3. [Assemble and mount the board](https://hiveboard-bench.github.io/hivedocs/hardware/assembly). Check that each mechanism moves freely and each attachment remains seated.
 4. Read the [evaluation protocol](Documentation/PROTOCOL.md), including familiarization, success criteria, timeouts, and counting conventions.
-5. Record **five trials for each of the 13 conditions (65 trials total)** using the [Evaluation Runner](https://www.ricardovgodoy.com/hiveboard-docs/benchmark/evaluation-runner) or the [CSV](Documentation/trials.csv) / [XLSX](Documentation/trials.xlsx) template.
+5. Record **five trials for each of the 13 conditions (65 trials total)** using the [Evaluation Runner](https://hiveboard-bench.github.io/hivedocs/benchmark/evaluation-runner) or the [CSV](Documentation/trials.csv) / [XLSX](Documentation/trials.xlsx) template.
 
-The documentation and runner are currently maintained in [ricardovgodoy/hiveboard-docs](https://github.com/ricardovgodoy/hiveboard-docs), ahead of migration to the project website.
+The documentation and Evaluation Runner are maintained in [`docs/` in the project website repository](https://github.com/hiveboard-bench/hiveboard-bench.github.io/tree/main/docs).
 
 ## Board and attachments
 
@@ -32,37 +32,37 @@ The documentation and runner are currently maintained in [ricardovgodoy/hiveboar
   <img src="Images/Hiveboard4.png" alt="HiveBoard honeycomb base with mounted mechanisms" width="50%">
 </p>
 
-Attachments share the same mounting geometry. The shock absorber occupies two adjacent cells. The ball valve is evaluated in two configurations: without a friction ring and with a ring fitted.
+HiveBoard has 12 attachment designs evaluated in 13 conditions. The ball valve is evaluated without and with a friction ring, giving two conditions for the same attachment design. Attachments share the same mounting geometry. The shock absorber occupies two adjacent cells. The ball valve is evaluated in two configurations: without a friction ring and with a ring fitted.
 
 <p align="center">
   <img src="Images/attachments_overview.png" alt="HiveBoard mechanisms shown on the base and as individual renders" width="100%">
 </p>
 
-| Family | Condition | Task |
+| Category | Attachment | Task |
 |---|---|---|
 | Torque | Ball valve | Rotate the lever 90° from closed to open |
-| Torque | Ball valve with friction ring | Complete the same rotation with the ring fitted |
-| Torque | Small gate valve | Rotate the stem one full turn |
-| Torque | Large gate valve | Rotate the stem one full turn |
+| Torque | Ball valve + ring | Complete the same rotation with the ring fitted |
+| Torque | Gate valve (small) | Rotate the stem one full turn |
+| Torque | Gate valve (large) | Rotate the stem one full turn |
 | Torque | Circuit breaker | Move the toggle to the opposite state and hold it |
-| Precision | Light bulb and socket | Thread the bulb until seated |
-| Precision | M8 threaded fastener | Thread the bolt along the available length |
-| Precision | M30 threaded fastener | Thread the bolt along the available length |
-| Precision | Threaded peg insertion | Align and thread the free 8 mm peg into the socket until seated |
-| Composed assembly | Covered button | Open the cover and press the button |
+| Precision | Light bulb | Thread the bulb until seated |
+| Precision | Thread (M8) | Thread the bolt along the available length |
+| Precision | Thread (M30) | Thread the bolt along the available length |
+| Precision | Peg insertion | Align and thread the free 8 mm peg into the socket until seated |
+| Composed assembly | Button | Open the cover and press the button |
 | Composed assembly | Lock and key | Grasp the key, insert it vertically, and turn it to unlock |
-| Composed assembly | Sliding drawer | Grasp the handle, pull the drawer open, and push it closed |
+| Composed assembly | Drawer | Grasp the handle, pull the drawer open, and push it closed |
 | Composed assembly | Shock absorber | Grasp, align, and fully insert the pin |
 
-The friction-ring accessory includes four rings with different rotational resistance. Record the configuration used. The gate-valve criterion is **one full turn of the stem**; full travel depends on the printed thread pitch. For composed tasks, record the last completed stage as well as the overall outcome.
+The friction-ring accessory includes four rings with different rotational resistance. Record the configuration used. The gate-valve criterion is **one full turn of the stem**; full travel depends on the printed thread pitch. For composed assembly tasks, record the last completed stage as well as the overall outcome.
 
-See [the protocol](Documentation/PROTOCOL.md) for timeouts and stage definitions.
+See [the protocol](Documentation/PROTOCOL.md) for timeouts and stage definitions, and [Terminology](Documentation/TERMINOLOGY.md) for task names and trial identifiers.
 
 ## Recommended 3D printing settings
 
 Use PLA and a consumer-grade FDM printer. A **300 × 300 mm build area** accommodates the complete honeycomb base without splitting it. Thread test pieces are included in [`STL/Threads/`](STL/Threads/) for checking print tolerances before producing the complete mechanisms.
 
-Detailed assembly and printing instructions are available in the [module-specific guide (PDF)](https://github.com/user-attachments/files/29721347/HiveBoard.-.Module-Specific.Instructions.1.pdf).
+Detailed assembly and printing instructions are available in the [attachment-specific printing guide (PDF)](https://github.com/user-attachments/files/29721347/HiveBoard.-.Module-Specific.Instructions.1.pdf).
 
 ### PLA profile
 
@@ -106,7 +106,7 @@ Remove stringing and support material, check mating surfaces, and test the threa
 
 ## Evaluation and trial records
 
-A complete evaluation contains **65 recorded trials**, including separate five-trial blocks for the two ball-valve configurations. Keep the platform configuration and control method consistent within the recorded trial blocks.
+A complete evaluation contains **65 recorded trials**, including separate five-trial blocks for the two ball-valve configurations. Keep the platform configuration and control interface consistent within the recorded trial blocks.
 
 For each trial, record:
 
@@ -114,14 +114,14 @@ For each trial, record:
 - completion time in decimal seconds, for successful trials only;
 - attempts counted from 1 and regrasps counted from 0;
 - prehensile or non-prehensile strategy;
-- last completed stage for composed tasks; and
-- one primary failure cause for unsuccessful trials.
+- last completed stage for composed assembly tasks; and
+- one dominant failure cause for unsuccessful trials.
 
 Use [`HOW_TO_FILL_TRIALS.md`](Documentation/HOW_TO_FILL_TRIALS.md) for the column definitions and allowed failure causes. Preserve trials involving broken or displaced parts and describe the event in `notes`.
 
 ### Browser-based evaluation
 
-The [Evaluation Runner](https://www.ricardovgodoy.com/hiveboard-docs/benchmark/evaluation-runner) displays task instructions and example videos, provides a countdown and timer, and exports the trial records. Begin the first commanded task motion when the countdown reaches zero. The evaluator determines whether the success criterion has been met.
+The [Evaluation Runner](https://hiveboard-bench.github.io/hivedocs/benchmark/evaluation-runner) displays task instructions and example videos, provides a countdown and timer, and exports the trial records. Begin the first commanded task motion when the countdown reaches zero. The evaluator determines whether the success criterion has been met.
 
 Record every trial with an external camera, keeping the board, end-effector, and final task state visible. Once all 65 trial entries and required setup details are complete, the runner generates a results ZIP with the CSV, platform description, manifest, session backup, and recording filenames.
 
@@ -133,7 +133,7 @@ Attach the setup photograph in the runner or add it to the extracted ZIP as `set
 
 Friction, mass, and inertia are nominal values. Check joint motion, collision geometry, and physical parameters in the simulator used for an experiment, and report any parameter overrides.
 
-Isaac Lab environments and training code are maintained separately in [EESC-LabRoM/isaaclab-hiveboard](https://github.com/EESC-LabRoM/isaaclab-hiveboard). See the [simulation documentation](https://www.ricardovgodoy.com/hiveboard-docs/simulation/assets) for asset usage and the [Isaac Lab guide](https://www.ricardovgodoy.com/hiveboard-docs/simulation/isaac-lab) for installation and commands.
+Isaac Lab environments and training code are maintained separately in [EESC-LabRoM/isaaclab-hiveboard](https://github.com/EESC-LabRoM/isaaclab-hiveboard). See the [simulation documentation](https://hiveboard-bench.github.io/hivedocs/simulation/assets) for asset usage and the [Isaac Lab guide](https://hiveboard-bench.github.io/hivedocs/simulation/isaac-lab) for installation and commands.
 
 ## Reported evaluations
 
@@ -158,7 +158,7 @@ Each platform ran all 65 trials. Results and demonstration videos are available 
 | [`Documentation/`](Documentation/) | Protocol, logging instructions, and CSV/XLSX templates |
 | [`Images/`](Images/) | Photographs, logos, and renders |
 
-For a new attachment, reuse the mounting interface and document its initial state, success criterion, timeout, and reset procedure. See [Adding an attachment](https://www.ricardovgodoy.com/hiveboard-docs/guides/new-attachment).
+For a new attachment, reuse the mounting interface and document its initial state, success criterion, timeout, and reset procedure. See [Adding an attachment](https://hiveboard-bench.github.io/hivedocs/guides/new-attachment).
 
 ## Citation
 
