@@ -60,7 +60,7 @@ See [the protocol](Documentation/PROTOCOL.md) for timeouts and stage definitions
 
 ## ArUco cell
 
-The optional [ArUco cell](CAD/ArUco%20Cell/) provides a visual reference for board localization and alignment between physical and simulated scenes. Print the base in white PLA and the marker insert in black PLA, fit the parts together, and optionally glue the mating surfaces. The folder includes the two printable parts, an assembled model, reference images, and printing and assembly instructions.
+The optional [ArUco cell](CAD/ArUco%20Cell/) provides a visual reference for board localization and alignment between physical and simulated scenes. Print the base in white PLA and the marker insert in black PLA, fit the parts together, and optionally glue the mating surfaces. The folder includes the two printable parts, an assembled model, a CAD reference image, and printing and assembly instructions.
 
 ## Recommended 3D printing settings
 

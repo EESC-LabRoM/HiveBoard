@@ -43,12 +43,6 @@ Record the dictionary, marker ID, measured marker side length, model scale, and 
 
 See the [OpenCV ArUco detection documentation](https://docs.opencv.org/4.x/d5/dae/tutorial_aruco_detection.html) for dictionary selection, detection, and pose estimation.
 
-## Reference images
-
-### Printed cell
-
-<img src="images/aruco_cell_printed.png" alt="Assembled ArUco cell printed in white and black PLA" width="420">
-
-### Assembly model
+## Assembly model
 
 <img src="images/aruco_cell_assembly.png" alt="CAD view of the white hexagonal base and black marker insert" width="530">
