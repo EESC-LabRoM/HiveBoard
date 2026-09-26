@@ -58,6 +58,10 @@ The friction-ring accessory includes four rings with different rotational resist
 
 See [the protocol](Documentation/PROTOCOL.md) for timeouts and stage definitions, and [Terminology](Documentation/TERMINOLOGY.md) for task names and trial identifiers.
 
+## ArUco cell
+
+The optional [ArUco cell](CAD/ArUco%20Cell/) provides a visual reference for board localization and alignment between physical and simulated scenes. Print the base in white PLA and the marker insert in black PLA, fit the parts together, and optionally glue the mating surfaces. The folder includes the two printable parts, an assembled model, reference images, and printing and assembly instructions.
+
 ## Recommended 3D printing settings
 
 Use PLA and a consumer-grade FDM printer. A **300 × 300 mm build area** accommodates the complete honeycomb base without splitting it. Thread test pieces are included in [`STL/Threads/`](STL/Threads/) for checking print tolerances before producing the complete mechanisms.
@@ -153,7 +157,7 @@ Each platform ran all 65 trials. Results and demonstration videos are available 
 | Directory | Contents |
 |---|---|
 | [`STL/`](STL/) | Printable parts and thread test pieces |
-| [`CAD/`](CAD/) | Editable source geometry |
+| [`CAD/`](CAD/) | Source geometry and mesh exports |
 | [`Simulation/`](Simulation/) | Articulated assets and meshes |
 | [`Documentation/`](Documentation/) | Protocol, logging instructions, and CSV/XLSX templates |
 | [`Images/`](Images/) | Photographs, logos, and renders |
@@ -183,3 +187,4 @@ If you use HiveBoard in your research, cite the project paper:
 ## License
 
 This project is intended for research, educational, and prototyping purposes.
+
