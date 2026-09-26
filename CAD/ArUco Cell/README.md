@@ -20,7 +20,7 @@ These are mesh exports. Vertex positions, faces, and exported scale are preserve
 
 ## Printing and assembly
 
-1. Import the white base and black insert into the slicer as separate parts. Check the model dimensions and apply the same scale factor to both parts.
+1. Import the white base and black insert into the slicer as separate parts. Set the import units to centimetres, or apply a scale factor of 10 if the slicer interprets OBJ coordinates as millimetres. Apply the same scale to both parts and verify an assembled width of 88.1 mm.
 2. Print the base in white PLA and the insert in black PLA. Use the repository's recommended PLA profile as a starting point and inspect the mating surfaces for stringing or excess material.
 3. Fit the two parts together in the orientation shown in the assembly model. Check that the marker pattern is complete and the insert is fully seated.
 4. If permanent assembly is required, apply a small amount of PLA-compatible adhesive to the mating surfaces. Keep adhesive away from the visible marker face. Let it cure before mounting.
@@ -28,9 +28,16 @@ These are mesh exports. Vertex positions, faces, and exported scale are preserve
 
 ## Dimensions and marker configuration
 
-OBJ files do not specify physical units. The supplied assembly has coordinate extents of **8.81 × 7.629684 × 2.2**, and the black square has side length **4.750497**, in exported coordinate units. Confirm the intended physical dimensions before printing or importing the model into a simulator. The files have not been rescaled.
+The designer confirmed an overall width of **88.1 mm**. The OBJ coordinates therefore correspond to centimetres. The files retain their original coordinates.
 
-The supplied files do not identify the ArUco dictionary or marker ID. Confirm both with the designer and check detection on the printed part. For pose estimation, measure the square marker side from the outer edges of its black border and use calibrated camera parameters. Record the marker's location and orientation relative to the board so that its estimated pose can be converted to a board pose.
+| Dimension | Nominal size |
+|---|---|
+| Assembly bounding box | 88.1 × 76.297 × 22.0 mm |
+| Outer black marker square | 47.505 mm per side |
+
+For a millimetre-based importer, multiply the OBJ coordinates by 10. For a metre-based simulator, multiply them by 0.01. Check the imported dimensions before printing or using the model in simulation.
+
+The designer specifies a **4×4 ArUco marker with ID 0**. The full dictionary identifier has not yet been confirmed. Check the detector configuration and verify detection on the printed part. For pose estimation, measure the square marker side from the outer edges of its black border and use calibrated camera parameters. Record the marker's location and orientation relative to the board so that its estimated pose can be converted to a board pose.
 
 Record the dictionary, marker ID, measured marker side length, model scale, and marker-to-board transform with each setup. Detection accuracy and physical-to-simulation alignment need to be measured in the intended camera and lighting configuration.
 
