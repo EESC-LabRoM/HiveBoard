@@ -37,7 +37,7 @@ The designer confirmed an overall width of **88.1 mm**. The OBJ coordinates ther
 
 For a millimetre-based importer, multiply the OBJ coordinates by 10. For a metre-based simulator, multiply them by 0.01. Check the imported dimensions before printing or using the model in simulation.
 
-The designer specifies a **4×4 ArUco marker with ID 0**. The full dictionary identifier has not yet been confirmed. Check the detector configuration and verify detection on the printed part. For pose estimation, measure the square marker side from the outer edges of its black border and use calibrated camera parameters. Record the marker's location and orientation relative to the board so that its estimated pose can be converted to a board pose.
+The marker was generated with [chev.me/arucogen](https://chev.me/arucogen/) using **4×4 (50, 100, 250, 1000)** and **marker ID 0**. Configure the detector with **OpenCV `DICT_4X4_50`, ID `0`**. This ID has the same bit pattern in `DICT_4X4_50`, `DICT_4X4_100`, `DICT_4X4_250`, and `DICT_4X4_1000`, which share the same underlying marker list in [OpenCV](https://github.com/opencv/opencv/blob/4.x/modules/objdetect/src/aruco/aruco_dictionary.cpp). Verify detection on the printed part. For pose estimation, measure the square marker side from the outer edges of its black border and use calibrated camera parameters. Record the marker's location and orientation relative to the board so that its estimated pose can be converted to a board pose.
 
 Record the dictionary, marker ID, measured marker side length, model scale, and marker-to-board transform with each setup. Detection accuracy and physical-to-simulation alignment need to be measured in the intended camera and lighting configuration.
 
