@@ -117,7 +117,7 @@ These attachments are scored at sub-task granularity. Record the last completed 
 | Button | (1) Open the cover (2) Press the button until actuation | 60 s |
 | Lock and key | (1) Grasp key (2) Insert key vertically (3) Rotate to unlock | 180 s |
 | Drawer | (1) Grasp handle (2) Pull open (3) Push closed | 120 s |
-| Shock absorber | (1) Grasp pin (2) Align with hole (3) Insert pin fully | 180 s |
+| Shock absorber | (1) Grasp the loose part (2) Align its hole with the pin (3) Insert the part fully onto the pin | 180 s |
 
 A trial is a full success only if all stages complete within the timeout. Partial completions are recorded by their last completed stage in the `stage_reached` column.
 
