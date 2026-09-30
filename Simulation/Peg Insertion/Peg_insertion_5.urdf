@@ -1,36 +1,49 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0"?>
+<!--
+  Peg insertion (Hole 5): five-hole plate + one threaded peg in hole 5 on a
+  continuous revolute and a prismatic joint along the hole axis.
+  Turns the plate normal to +X like the other mechanisms.
+  PrismaticJoint = 0 seats the peg (its end flush with the plate back).
+-->
 <robot name="Peg_insertion_5">
-  <joint name="FixedJoint" type="fixed">
-    <origin xyz="0. 0. 0." rpy="-0. 0. 0." />
-    <parent link="World" />
-    <child link="Base" />
-  </joint>
-  <link name="Base">
-    <inertial><origin xyz="0.000000 0.000000 0.007500" rpy="0 0 0" /><mass value="0.1008" /><inertia ixx="5.08014e-05" ixy="0" ixz="0" iyy="6.7105e-05" iyz="0" izz="0.000114125" /></inertial><visual>
-      <origin xyz="0. 0. 0." rpy="0. 0. 0." />
-      <geometry>
-        <mesh filename="meshes/Base_principal_Corpo1.obj" scale="1. 1. 1." />
-      </geometry>
-    </visual>
-    <collision>
-      <origin xyz="0. 0. 0." rpy="0. 0. 0." />
-      <geometry>
-        <mesh filename="meshes/Base_principal_Corpo1.obj" scale="1. 1. 1." />
-      </geometry>
-    </collision>
-  </link>
   <link name="World">
-    <inertial><origin xyz="0.000000 0.000000 0.019000" rpy="0 0 0" /><mass value="0.0050" /><inertia ixx="1e-06" ixy="0" ixz="0" iyy="1e-06" iyz="0" izz="1e-06" /></inertial><visual>
-      <origin xyz="0.00001 0.028087 0. " rpy="-0. 0. 0." />
-      <geometry>
-        <mesh filename="meshes/Al__a_Corpo1.obj" scale="1. 1. 1." />
-      </geometry>
+    <inertial><origin xyz="0.0075 0 0" rpy="0 0 0" /><mass value="0.1008" /><inertia ixx="0.000114125" ixy="0" ixz="0" iyy="6.7105e-05" iyz="0" izz="5.08014e-05" /></inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 1.5707963 0" />
+      <geometry><mesh filename="meshes/Base_principal_Corpo1.obj" scale="1 1 1" /></geometry>
     </visual>
     <collision>
-      <origin xyz="0.00001 0.028087 0. " rpy="-0. 0. 0." />
-      <geometry>
-        <mesh filename="meshes/Al__a_Corpo1.obj" scale="1. 1. 1." />
-      </geometry>
+      <origin xyz="0.0075 0 0" rpy="0 0 0" />
+      <geometry><box size="0.015 0.076 0.076" /></geometry>
     </collision>
   </link>
+  <link name="rot_pivot">
+    <inertial><origin xyz="0 0 0" rpy="0 0 0" /><mass value="0.005" /><inertia ixx="1e-06" ixy="0" ixz="0" iyy="1e-06" iyz="0" izz="1e-06" /></inertial>
+  </link>
+  <link name="peg">
+    <!-- CAD mass is ~2 g; 20 g keeps the grasp contacts stable. -->
+    <inertial><origin xyz="0 0 0.019" rpy="0 0 0" /><mass value="0.02" /><inertia ixx="1e-06" ixy="0" ixz="0" iyy="1e-06" iyz="0" izz="1e-06" /></inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="meshes/Al__a_Corpo1.obj" scale="1 1 1" /></geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry><mesh filename="meshes/Al__a_Corpo1.obj" scale="1 1 1" /></geometry>
+    </collision>
+  </link>
+  <!-- Child frames have +Z along the hole, which is World +X. -->
+  <joint name="RevoluteJoint" type="continuous">
+    <origin xyz="0 0.028087 0" rpy="0 1.5707963 0" />
+    <parent link="World" />
+    <child link="rot_pivot" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <joint name="PrismaticJoint" type="prismatic">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="rot_pivot" />
+    <child link="peg" />
+    <axis xyz="0 0 1" />
+    <limit lower="0.0" upper="0.020" effort="100.0" velocity="1.0" />
+  </joint>
 </robot>
