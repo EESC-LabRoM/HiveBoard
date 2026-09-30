@@ -52,7 +52,7 @@ HiveBoard has 12 attachment designs evaluated in 13 conditions. The ball valve i
 | Composed assembly | Button | Open the cover and press the button |
 | Composed assembly | Lock and key | Grasp the key, insert it vertically, and turn it to unlock |
 | Composed assembly | Drawer | Grasp the handle, pull the drawer open, and push it closed |
-| Composed assembly | Shock absorber | Grasp, align, and fully insert the pin |
+| Composed assembly | Shock absorber | Grasp the loose part, align its hole with the pin, and insert the part fully onto the pin |
 
 The friction-ring accessory includes four rings with different rotational resistance. Record the configuration used. The gate-valve criterion is **one full turn of the stem**; full travel depends on the printed thread pitch. For composed assembly tasks, record the last completed stage as well as the overall outcome.
 

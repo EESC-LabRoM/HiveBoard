@@ -41,9 +41,9 @@ For a video walk-through of the protocol see: https://youtu.be/kaYB_Oc64nA
 | Button (`button`) | Open the cover | Press the button | n/a |
 | Lock and key (`lock`) | Grasp key | Insert key vertically | Rotate to unlock |
 | Drawer (`drawer`) | Grasp handle | Pull open | Push closed |
-| Shock absorber (`shock_absorber`) | Grasp pin | Align with hole | Insert pin fully |
+| Shock absorber (`shock_absorber`) | Grasp loose part | Align its hole with the pin | Insert part fully onto pin |
 
-Enter the number, not the stage name. A shock-absorber trial in which the pin was grasped but never aligned is `1`. A trial in which the gripper never held the pin is `0`.
+Enter the number, not the stage name. A shock-absorber trial in which the loose part was grasped but its hole was never aligned with the pin is `1`. A trial in which the gripper never held the loose part is `0`. The loose part moves onto the pin, which stays in place.
 
 ## Quick reference for timeouts
 
